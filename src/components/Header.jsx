@@ -5,7 +5,7 @@ import { Button, DropdownMenu } from "@radix-ui/themes";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import { ChevronDown, ChevronRight, Menu, UserRound, X } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 const Header = () => {
@@ -16,6 +16,7 @@ const Header = () => {
 const DesktopHeader = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <div className="container lg:max-w-[1241px] py-5 mb-20">
@@ -46,10 +47,16 @@ const DesktopHeader = () => {
               </Button>
             </DropdownMenu.Trigger>
             <DropdownMenu.Content>
-              <DropdownMenu.Item className="hover:bg-[#2196F3] hover:cursor-pointer">
+              <DropdownMenu.Item
+                className="hover:bg-[#2196F3] hover:cursor-pointer"
+                onClick={() => router.push("/tra-cuu-phat-nguoi")}
+              >
                 Tra cứu phạt nguội
               </DropdownMenu.Item>
-              <DropdownMenu.Item className="hover:bg-[#2196F3] hover:cursor-pointer">
+              <DropdownMenu.Item
+                className="hover:bg-[#2196F3] hover:cursor-pointer"
+                onClick={() => router.push("/tra-cuu-diem-phat-nguoi")}
+              >
                 Điểm phạt nguội
               </DropdownMenu.Item>
             </DropdownMenu.Content>
@@ -176,7 +183,7 @@ const MobileHeader = () => {
         </div>
       </div>
       {isShow && (
-        <div className="absolute container bg-[#2196F3] w-full py-4">
+        <div className="absolute container bg-[#2196F3] w-full py-4 z-10">
           <div className="flex flex-col justify-center gap-5">
             <Link
               href={"/"}
@@ -205,10 +212,30 @@ const MobileHeader = () => {
               <Collapsible.Content>
                 <div className="pl-4 pt-3">
                   <ul>
-                    <li className="text-white text-lg mb-2">
-                      Tra cứu phạt nguội
+                    <li className="mb-2 block">
+                      <Link
+                        href="/tra-cuu-phat-nguoi"
+                        className={`text-base text-white hover:opacity-85 transition-all ${
+                          pathname === "/tra-cuu-phat-nguoi" &&
+                          "border-b-2 border-b-white border-l-0 border-t-0 border-r-0 border-solid font-semibold pb-1"
+                        }`}
+                        onClick={() => setIsShow((show) => !show)}
+                      >
+                        Tra cứu phạt nguội
+                      </Link>
                     </li>
-                    <li className="text-white text-lg">Điểm phạt nguội</li>
+                    <li>
+                      <Link
+                        className={`text-base text-white hover:opacity-85 transition-all ${
+                          pathname === "/tra-cuu-diem-phat-nguoi" &&
+                          "border-b-2 border-b-white border-l-0 border-t-0 border-r-0 border-solid font-semibold pb-1"
+                        }`}
+                        href="/tra-cuu-diem-phat-nguoi"
+                        onClick={() => setIsShow((show) => !show)}
+                      >
+                        Điểm phạt nguội
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </Collapsible.Content>
