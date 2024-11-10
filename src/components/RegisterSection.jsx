@@ -1,15 +1,15 @@
 function RegisterSection() {
   return (
-    <div className="bg-[#695EED] py-10">
+    <div className="bg-[#285398] py-10">
       <div className="container lg:max-w-[1241px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           <div className="flex flex-col justify-center">
-            <h1 className="text-3xl lg:text-6xl font-black mb-5 text-white">
+            <h1 className="text-xl lg:text-4xl font-black mb-5 text-white">
               Đăng ký hội viên
             </h1>
-            <p className="text-xl text-white">
+            <p className="text-white">
               Đăng ký hội viên ngay bây giờ để nhận thông báo phạt nguội kịp
-              thời và hướng dẫn cách giải quyết đơn giản nhất.
+              thời <br/>và hướng dẫn cách giải quyết đơn giản nhất.
             </p>
           </div>
           <div>

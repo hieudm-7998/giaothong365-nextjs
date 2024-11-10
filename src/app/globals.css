@@ -11,11 +11,19 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
+  position: relative;
 }
 
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
   text-indent: 1px;
-  text-overflow: '';
+  text-overflow: "";
+}
+
+.main-banner {
+  background: url("/images/bg-giao-thong-360.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

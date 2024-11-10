@@ -17,60 +17,88 @@ export default function Home() {
 }
 
 const MainBanner = () => {
+  const isDesktop = useMediaQuery("(min-width: 960px)");
+
   return (
-    <div className="container lg:max-w-[1241px] mb-20">
-      <div className="grid grid-cols-1 lg:grid-cols-2 mb-20">
-        <div className="flex flex-col justify-center mb-20 lg:m-0">
-          <h1 className="lg:text-4xl text-4xl text-[#2196F3] font-bold text-center lg:text-left">
-            Chào mừng bạn đến với
-          </h1>
-          <h1 className="lg:text-4xl text-4xl text-[#2196F3] font-bold mb-5 text-center lg:text-left">
-            Giao thông 365
-          </h1>
-          <h2 className="lg:text-2xl text-lg text-black font-semibold text-center lg:text-left mb-10">
-            Kiểm tra và quản lý vi phạm phạt nguội của bạn một cách nhanh chóng và dễ dàng
-          </h2>
-          <Button className="block lg:inline mx-auto lg:m-0 hover:cursor-pointer hover:opacity-85 text-base transition-all bg-[#2196F3] uppercase !h-[50px] !w-[300px]">
-            Đăng ký hội viên ngay
-          </Button>
+    <div className="main-banner pt-28 pb-10 lg:pb-16">
+      <div className="container lg:max-w-[1241px] mb-10 lg:mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 mb-10 lg:mb-20">
+          <div className="flex flex-col justify-center mb-10 lg:mb-20 lg:m-0">
+            <h1 className="lg:text-4xl text-4xl text-[#285398] font-bold text-center lg:text-left">
+              Chào mừng bạn đến với
+            </h1>
+            {/* <h1 className="lg:text-4xl text-4xl text-[#285398] font-bold mb-5 text-center lg:text-left">
+              Giao thông 365
+            </h1> */}
+
+            <img src="/images/logo.png" alt="" className="max-w-[300px] mb-5" />
+            <h2 className="lg:text-xl text-lg text-black text-center lg:text-left">
+              Kiểm tra và quản lý vi phạm phạt nguội của bạn
+            </h2>
+            <h2 className="lg:text-xl text-lg text-black text-center lg:text-left mb-10">
+              một cách nhanh chóng và dễ dàng
+            </h2>
+            <Button className="block lg:inline mx-auto lg:m-0 hover:cursor-pointer hover:opacity-85 text-base transition-all bg-[#285398] uppercase !h-[50px] !w-[300px]">
+              Đăng ký hội viên ngay
+            </Button>
+          </div>
+          <div>
+            <img
+              src="/images/banner-giao-thong-360.png"
+              className="block mx-auto"
+              alt=""
+            />
+          </div>
         </div>
-        <div>
-          <img src="/images/main-banner.png" className="block mx-auto" alt="" />
-        </div>
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        <div>
-          <h1 className="text-[#2196F3] text-3xl font-semibold mb-5 text-center lg:text-left">
-            Tra cứu phạt nguội
-          </h1>
-          <p className="line-clamp-1">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </p>
-        </div>
-        <div>
-          <h1 className="text-[#2196F3] text-3xl font-semibold mb-5 text-center lg:text-left">
-            Thông báo vi phạm
-          </h1>
-          <p className="line-clamp-1">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </p>
-        </div>
-        <div>
-          <h1 className="text-[#2196F3] text-3xl font-semibold mb-5 text-center lg:text-left">
-            Tư vấn hỗ trợ
-          </h1>
-          <p className="line-clamp-1">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+          <div
+            className="rounded-2xl p-6 shadow-2xl"
+            style={{
+              backgroundColor: isDesktop ? "rgba(255,255,255,0.8)" : "#eff8ff",
+            }}
+          >
+            <h1 className="text-[#285398] text-2xl font-semibold text-center lg:text-left">
+              Tra cứu phạt nguội
+            </h1>
+            <p className="line-clamp-3 text-sm text-gray-700">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+          </div>
+          <div
+            className="rounded-2xl p-6 shadow-2xl"
+            style={{
+              backgroundColor: isDesktop ? "rgba(255,255,255,0.8)" : "#eff8ff",
+            }}
+          >
+            <h1 className="text-[#285398] text-2xl font-semibold text-center lg:text-left">
+              Thông báo vi phạm
+            </h1>
+            <p className="line-clamp-3 text-sm">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+          </div>
+          <div
+            className="rounded-2xl p-6 shadow-2xl"
+            style={{
+              backgroundColor: isDesktop ? "rgba(255,255,255,0.8)" : "#eff8ff",
+            }}
+          >
+            <h1 className="text-[#285398] text-2xl font-semibold text-center lg:text-left">
+              Tư vấn hỗ trợ
+            </h1>
+            <p className="line-clamp-3 text-sm">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -79,11 +107,8 @@ const MainBanner = () => {
 
 const RegisterForm = () => {
   return (
-    <div className="container lg:max-w-[1241px] mb-20">
+    <div className="container lg:max-w-[1241px] mb-20 lg:mb-32 px-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div>
-          <img src={`/images/register-image.png`} alt="" />
-        </div>
         <div>
           <h1 className="font-black text-[#0D47A1] text-3xl mb-5 text-center lg:text-left">
             ĐĂNG KÝ HỘI VIÊN
@@ -142,10 +167,13 @@ const RegisterForm = () => {
             </label>
 
             {/* Submit Button */}
-            <button className="w-full py-3 hover:bg-[#2196F3] transition-all text-white font-semibold rounded-md bg-[#0D47A1] focus:outline-none">
+            <button className="w-full py-3 hover:bg-[#285398] transition-all text-white font-semibold rounded-md bg-[#0D47A1] focus:outline-none">
               ĐĂNG KÝ HỘI VIÊN
             </button>
           </form>
+        </div>
+        <div>
+          <img src={`/images/register-image.png`} alt="" />
         </div>
       </div>
     </div>
@@ -153,12 +181,14 @@ const RegisterForm = () => {
 };
 
 const Benefit = () => {
+  const isDesktop = useMediaQuery("(min-width: 960px)");
+
   return (
-    <div className="container lg:max-w-[1241px] mb-20">
-      <h1 className="text-center text-3xl font-bold mb-2">
+    <div className="container lg:max-w-[1241px] mb-20 lg:mb-32">
+      <h1 className="text-center text-3xl font-bold mb- text-[#285398]">
         Lợi ích khi đăng ký hội viên
       </h1>
-      <p className="text-center text-base text-[#072670] mb-10">
+      <p className="text-center text-base text-gray-700 mb-10">
         Trở thành hội viên GiaoThong365 để nhận thông báo phạt nguội tức thì và
         nhiều ưu đãi khác!
       </p>
@@ -177,10 +207,10 @@ const Benefit = () => {
               />
             </div>
             <div className="col-span-10 flex flex-col justify-center">
-              <h1 className="font-black text-xl">
+              <h1 className="font-black text-lg lg:text-xl text-[#285398]">
                 Cập nhật phạt nguội qua SMS/ Email
               </h1>
-              <p className="text-base">
+              <p className="text-base text-gray-700">
                 Nhận thông báo ngay lập tức khi có vi phạm phạt nguội liên quan
                 đến phương tiện của bạn, qua cả SMS và Email. Không còn lo lắng
                 bỏ lỡ thông tin quan trọng.
@@ -196,10 +226,10 @@ const Benefit = () => {
               />
             </div>
             <div className="col-span-10 flex flex-col justify-center">
-              <h1 className="font-black text-xl">
+              <h1 className="font-black  text-lg lg:text-xl text-[#285398]">
                 Cập nhật điểm nóng giao thông
               </h1>
-              <p className="text-base">
+              <p className="text-base text-gray-700">
                 Dễ dàng tìm kiếm và theo dõi các điểm có gắn camera phạt nguội
                 hoặc các điểm giao thông thường xảy ra vi phạm
               </p>
@@ -214,10 +244,16 @@ const Benefit = () => {
               />
             </div>
             <div className="col-span-10 flex flex-col justify-center">
-              <h1 className="font-black text-xl">
-                Tư vấn, hỗ trợ xử lý vi phạm nhanh chóng
-              </h1>
-              <p className="text-base">
+              {isDesktop ? (
+                <h1 className="font-black  text-lg lg:text-xl text-[#285398]">
+                  Tư vấn, hỗ trợ xử lý vi phạm nhanh chóng
+                </h1>
+              ) : (
+                <h1 className="font-black text-lg lg:text-xl text-[#285398]">
+                  Tư vấn, hỗ trợ xử lý vi phạm <br /> nhanh chóng
+                </h1>
+              )}
+              <p className="text-base text-gray-700">
                 Hỗ trợ khách hàng xử lý khi có vi phạm
               </p>
             </div>
@@ -232,33 +268,39 @@ const OurClient = () => {
   const isDesktop = useMediaQuery("(min-width: 960px)");
 
   return (
-    <div className="container lg:max-w-[1241px] mb-20">
-      <h1 className="text-center text-3xl font-bold mb-10">
-        Đối tác của chúng tôi
-      </h1>
-      <Swiper
-        spaceBetween={50}
-        autoplay
-        slidesPerView={isDesktop ? 5 : 1}
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
-      >
-        <SwiperSlide>
-          <img src="/images/vni-logo.svg" alt="" className="block mx-auto" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/images/mic-logo.svg" alt="" className="block mx-auto" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/images/pvi-logo.svg" alt="" className="block mx-auto" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/images/tasco-logo.svg" alt="" className="block mx-auto" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/images/pti-logo.svg" alt="" className="block mx-auto" />
-        </SwiperSlide>
-      </Swiper>
+    <div className="bg-[#285398] pt-16 pb-20">
+      <div className="container lg:max-w-[1241px]">
+        <h1 className="text-center text-3xl font-bold mb-10">
+          Đối tác của chúng tôi
+        </h1>
+        <Swiper
+          spaceBetween={50}
+          autoplay
+          slidesPerView={isDesktop ? 5 : 3}
+          // onSlideChange={() => console.log("slide change")}
+          // onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide>
+            <img src="/images/vni-logo.svg" alt="" className="block mx-auto" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/mic-logo.svg" alt="" className="block mx-auto" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/pvi-logo.svg" alt="" className="block mx-auto" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="/images/tasco-logo.svg"
+              alt=""
+              className="block mx-auto"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/pti-logo.svg" alt="" className="block mx-auto" />
+          </SwiperSlide>
+        </Swiper>
+      </div>
     </div>
   );
 };

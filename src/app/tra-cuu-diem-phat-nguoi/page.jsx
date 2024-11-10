@@ -2,7 +2,7 @@
 
 import RegisterSection from "@/components/RegisterSection";
 import { Button } from "@radix-ui/themes";
-import { BriefcaseBusiness, LockKeyhole, User } from "lucide-react";
+import { Flame, Map, MapPin } from "lucide-react";
 import { useState } from "react";
 
 function TraCuuDiemPhatNguoi() {
@@ -10,10 +10,13 @@ function TraCuuDiemPhatNguoi() {
 
   return (
     <>
-      <div className="container lg:max-w-[1241px] mb-20">
+      <div className="container lg:max-w-[1241px] mb-20 pt-28">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
           <div className="col-span-4 lg:col-span-1">
-            <div className="flex flex-col p-5 rounded border border-[#D5D5D7] border-solid shadow-xl gap-3 w-full">
+            <div
+              className="flex flex-col p-5 rounded-2xl shadow-xl gap-3 w-full"
+              style={{ background: "rgba(255,255,255, 0.8)" }}
+            >
               <Button
                 className={`flex items-center justify-start !h-10 transition-all text-black hover:cursor-pointer ${
                   tab === "diem-gan-ban" ? "bg-[#EEEEEF]" : "!bg-white"
@@ -21,7 +24,7 @@ function TraCuuDiemPhatNguoi() {
                 variant="soft"
                 onClick={() => setTab("diem-gan-ban")}
               >
-                <User />
+                <MapPin />
                 <p>Điểm gần bạn</p>
               </Button>
               <Button
@@ -31,7 +34,7 @@ function TraCuuDiemPhatNguoi() {
                 variant="soft"
                 onClick={() => setTab("diem-nong")}
               >
-                <BriefcaseBusiness />
+                <Flame />
                 <p>Điểm nóng</p>
               </Button>
               <Button
@@ -41,13 +44,16 @@ function TraCuuDiemPhatNguoi() {
                 variant="soft"
                 onClick={() => setTab("lo-trinh-ban-den")}
               >
-                <LockKeyhole />
+                <Map />
                 <p>Lộ trình bạn đến</p>
               </Button>
             </div>
           </div>
           <div className="col-span-4 lg:col-span-3">
-            <div className="flex flex-col p-10 rounded border border-[#D5D5D7] border-solid shadow-xl">
+            <div
+              className="flex flex-col p-10 rounded-2xl shadow-xl"
+              style={{ background: "rgba(255,255,255, 0.8)" }}
+            >
               {tab === "diem-gan-ban" && <DiemGanBan />}
               {tab === "diem-nong" && <DiemNong />}
               {tab === "lo-trinh-ban-den" && <LoTrinhBanDen />}
@@ -63,7 +69,7 @@ function TraCuuDiemPhatNguoi() {
 const DiemGanBan = () => {
   return (
     <div>
-      <h1 className="text-3xl text-center font-bold text-[#2196F3] mb-10">
+      <h1 className="text-3xl text-center font-bold text-[#285398] mb-10">
         Tra cứu điểm phạt nguội gần bạn
       </h1>
       <p className="mb-10">(*) Vui lòng chọn khu vực muốn tra cứu.</p>
@@ -96,7 +102,7 @@ const DiemGanBan = () => {
           </select>
         </label>
       </form>
-      <button className="w-full block mx-auto lg:w-1/3 py-3 bg-[#2196F3] transition-all text-white font-semibold rounded-md hover:bg-[#0D47A1] focus:outline-none">
+      <button className="w-full block mx-auto lg:w-1/3 py-3 bg-[#285398] transition-all text-white font-semibold rounded-md hover:bg-[#0D47A1] focus:outline-none">
         Tra cứu
       </button>
     </div>
@@ -106,8 +112,8 @@ const DiemGanBan = () => {
 const DiemNong = () => {
   return (
     <div>
-      <h1 className="text-3xl text-center font-bold text-[#2196F3] mb-10">
-      Tra cứu điểm phạt nguội có tần suất cao
+      <h1 className="text-3xl text-center font-bold text-[#285398] mb-10">
+        Tra cứu điểm phạt nguội có tần suất cao
       </h1>
       <p className="mb-10">(*) Vui lòng chọn khu vực muốn tra cứu.</p>
       <form className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10">
@@ -127,7 +133,7 @@ const DiemNong = () => {
 
         <div></div>
       </form>
-      <button className="w-full block mx-auto lg:w-1/3 py-3 bg-[#2196F3] transition-all text-white font-semibold rounded-md hover:bg-[#0D47A1] focus:outline-none">
+      <button className="w-full block mx-auto lg:w-1/3 py-3 bg-[#285398] transition-all text-white font-semibold rounded-md hover:bg-[#0D47A1] focus:outline-none">
         Tra cứu
       </button>
     </div>
@@ -137,7 +143,7 @@ const DiemNong = () => {
 const LoTrinhBanDen = () => {
   return (
     <div>
-      <h1 className="text-3xl text-center font-bold text-[#2196F3] mb-10">
+      <h1 className="text-3xl text-center font-bold text-[#285398] mb-10">
         Tra cứu điểm phạt nguội gần bạn
       </h1>
       <p className="mb-10">(*) Vui lòng chọn loại đường bạn muốn tra cứu.</p>
@@ -170,7 +176,7 @@ const LoTrinhBanDen = () => {
           </select>
         </label>
       </form>
-      <button className="w-full block mx-auto lg:w-1/3 py-3 bg-[#2196F3] transition-all text-white font-semibold rounded-md hover:bg-[#0D47A1] focus:outline-none">
+      <button className="w-full block mx-auto lg:w-1/3 py-3 bg-[#285398] transition-all text-white font-semibold rounded-md hover:bg-[#0D47A1] focus:outline-none">
         Tra cứu
       </button>
     </div>
