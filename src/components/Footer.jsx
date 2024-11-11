@@ -18,7 +18,7 @@ function Footer() {
   const pathname = usePathname();
 
   return (
-    <div className="bg-white py-20 ">
+    <div className="footer-bg py-20 ">
       <div className="container lg:max-w-[1241px]">
         <Link
           className="text-base   lg:text-black block text-center lg:text-left"
@@ -33,7 +33,7 @@ function Footer() {
                 href="/"
                 className={`text-base   lg:text-black hover:opacity-85 transition-all ${
                   pathname === "/" &&
-                  "  lg:text-[#285398] border-white border-l-0 border-t-0 border-r-0 border-solid font-semibold"
+                  "  lg:text-[#285398]  font-semibold"
                 }`}
               >
                 Trang chủ
@@ -42,7 +42,7 @@ function Footer() {
                 href="/tra-cuu"
                 className={`text-base   lg:text-black hover:opacity-85 transition-all ${
                   pathname === "/tra-cuu" &&
-                  "  lg:text-[#285398] border-white border-l-0 border-t-0 border-r-0 border-solid font-semibold"
+                  "  lg:text-[#285398] font-semibold"
                 }`}
               >
                 Tra cứu
@@ -51,7 +51,7 @@ function Footer() {
                 href="/ho-tro"
                 className={`text-base   lg:text-black hover:opacity-85 transition-all ${
                   pathname === "/ho-tro" &&
-                  "  lg:text-[#285398] border-white border-l-0 border-t-0 border-r-0 border-solid font-semibold"
+                  "  lg:text-[#285398] font-semibold"
                 }`}
               >
                 Hỗ trợ
@@ -60,7 +60,7 @@ function Footer() {
                 href="/chinh-sach-dieu-khoan"
                 className={`text-base   lg:text-black hover:opacity-85 transition-all ${
                   pathname === "/chinh-sach-dieu-khoan" &&
-                  "  lg:text-[#285398] border-white border-l-0 border-t-0 border-r-0 border-solid font-semibold"
+                  "  lg:text-[#285398] font-semibold"
                 }`}
               >
                 Chính sách điều khoản

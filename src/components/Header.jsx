@@ -1,7 +1,16 @@
 "use client";
 
 import useMediaQuery from "@/hooks/useMediaQuery";
-import { Button, DropdownMenu, IconButton } from "@radix-ui/themes";
+import {
+  Button,
+  Dialog,
+  DropdownMenu,
+  Flex,
+  IconButton,
+  Select,
+  Text,
+  TextField,
+} from "@radix-ui/themes";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import {
   AlertCircle,
@@ -119,7 +128,7 @@ const DesktopHeader = () => {
                       radius="full"
                       className="!w-10 !h-10 hover:cursor-pointer border-[#285398] border border-solid !p-2 relative"
                     >
-                      <UserRound cas />
+                      <UserRound />
                       <div className="absolute flex items-center justify-center flex-col w-5 h-5 z-20 text-white text-sm -right-2 -top-1 bg-red-600 rounded-full">
                         1
                       </div>
@@ -153,15 +162,8 @@ const DesktopHeader = () => {
             ) : (
               <>
                 <div className="flex items-center gap-2">
-                  <Button
-                    variant="outline"
-                    className="hover:cursor-pointer hover:opacity-85 text-base transition-all !outline-[#285398] text-[#285398]"
-                  >
-                    Đăng ký
-                  </Button>
-                  <Button className="hover:cursor-pointer hover:opacity-85 text-base transition-all bg-[#285398]">
-                    Đăng nhập
-                  </Button>
+                  <RegisterDialog />
+                  <LoginDialog />
                 </div>
               </>
             )}
@@ -174,9 +176,11 @@ const DesktopHeader = () => {
 
 const MobileHeader = () => {
   const [isShow, setIsShow] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [openCollapse, setOpenCollapse] = useState(false);
+
   const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <div
@@ -200,7 +204,7 @@ const MobileHeader = () => {
                     radius="full"
                     className="!w-10 !h-10 hover:cursor-pointer border-[#285398] border border-solid !p-2 relative"
                   >
-                    <UserRound cas />
+                    <UserRound />
                     <div className="absolute flex items-center justify-center flex-col w-5 h-5 z-20 text-white text-sm -right-2 -top-1 bg-red-600 rounded-full">
                       1
                     </div>
@@ -345,15 +349,8 @@ const MobileHeader = () => {
               </Link>
               {isLoggedIn && (
                 <div className="grid grid-cols-2 gap-4 mt-5">
-                  <Button
-                    variant="outline"
-                    className="h-10 hover:cursor-pointer hover:opacity-85 text-base transition-all !outline-[#285398] text-[#285398]"
-                  >
-                    Đăng ký
-                  </Button>
-                  <Button className="h-10 hover:cursor-pointer hover:opacity-85 text-base transition-all bg-[#285398]">
-                    Đăng nhập
-                  </Button>
+                  <RegisterDialog />
+                  <LoginDialog />
                 </div>
               )}
             </div>
@@ -361,6 +358,132 @@ const MobileHeader = () => {
         )}
       </div>
     </div>
+  );
+};
+
+const RegisterDialog = () => {
+  return (
+    <Dialog.Root>
+      <Dialog.Trigger>
+        <Button
+          variant="outline"
+          className="!h-8 hover:cursor-pointer hover:opacity-85 text-base transition-all !outline-[#285398] text-[#285398]"
+        >
+          Đăng ký
+        </Button>
+      </Dialog.Trigger>
+
+      <Dialog.Content maxWidth="450px">
+        <Dialog.Title>Đăng ký hội viên</Dialog.Title>
+        <Dialog.Description size="2" mb="4">
+          Kiểm tra và quản lý vi phạm phạt nguội của bạn một cách nhanh chóng và
+          dễ dàng.
+        </Dialog.Description>
+
+        <Flex direction="column" gap="3">
+          <label>
+            <Text as="div" size="2" mb="1" weight="bold">
+              Họ và tên
+            </Text>
+            <TextField.Root placeholder="Họ và tên..." />
+          </label>
+          <label>
+            <Text as="div" size="2" mb="1" weight="bold">
+              Số điện thoại
+            </Text>
+            <TextField.Root placeholder="Số điện thoại..." />
+          </label>
+          <label>
+            <Text as="div" size="2" mb="1" weight="bold">
+              Biển số xe (BKS)
+            </Text>
+            <TextField.Root placeholder="Ví dụ: 30K12363" />
+          </label>
+          <label>
+            <Text as="div" size="2" mb="1" weight="bold">
+              Loại phương tiện
+            </Text>
+            <select
+              className="w-full px-2 !py-1 border border-solid focus:outline-[#8CA4F0] rounded-md shadow-sm transition-all hover:cursor-pointer"
+              style={{ borderColor: "rgba(0.01,0.03,0.18,0.2)" }}
+              defaultValue=""
+            >
+              <option value="" disabled>
+                Chọn loại phương tiện
+              </option>
+              <option value="car">Ô tô</option>
+              <option value="motorbike">Xe máy</option>
+              <option value="bicycle">Xe đạp</option>
+            </select>
+          </label>
+          <label className="flex items-center space-x-2">
+            <input type="checkbox" className="form-checkbox" />
+            <span>Tôi đồng ý với Điều khoản chính sách</span>
+          </label>
+        </Flex>
+
+        <Flex gap="3" mt="5" justify="center">
+          <Dialog.Close>
+            <Button className="!bg-[#285398] transition-all hover:cursor-pointer">
+              Đăng ký
+            </Button>
+          </Dialog.Close>
+          <Dialog.Close>
+            <Button variant="soft" color="gray">
+              Huỷ
+            </Button>
+          </Dialog.Close>
+        </Flex>
+      </Dialog.Content>
+    </Dialog.Root>
+  );
+};
+
+const LoginDialog = () => {
+  return (
+    <Dialog.Root>
+      <Dialog.Trigger>
+        <Button className="h-8 hover:cursor-pointer hover:opacity-85 text-base transition-all bg-[#285398]">
+          Đăng nhập
+        </Button>
+      </Dialog.Trigger>
+
+      <Dialog.Content maxWidth="450px">
+        <Dialog.Title>Đăng nhập</Dialog.Title>
+        {/* <Dialog.Description size="2" mb="4">
+          Kiểm tra và quản lý vi phạm phạt nguội của bạn một cách nhanh chóng và
+          dễ dàng.
+        </Dialog.Description> */}
+
+        <Flex direction="column" gap="3">
+          <label>
+            <Text as="div" size="2" mb="1" weight="bold">
+              Số điện thoại
+            </Text>
+            <TextField.Root placeholder="Số điện thoại..." />
+          </label>
+          <label>
+            <Text as="div" size="2" mb="1" weight="bold">
+              Mật khẩu
+            </Text>
+            <TextField.Root type="password" placeholder="Nhập mật khẩu..." />
+          </label>
+        </Flex>
+
+        <Flex gap="3" mt="5" justify="center">
+          <Dialog.Close>
+            <Button className="!bg-[#285398] transition-all hover:cursor-pointer">
+              Đăng nhập
+            </Button>
+          </Dialog.Close>
+          <Dialog.Close>
+            <Button variant="soft" color="gray">
+              Huỷ
+            </Button>
+          </Dialog.Close>
+        </Flex>
+      </Dialog.Content>
+    </Dialog.Root>
   );
 };
 export default Header;

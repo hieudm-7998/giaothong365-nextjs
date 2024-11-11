@@ -20,18 +20,18 @@ const MainBanner = () => {
   const isDesktop = useMediaQuery("(min-width: 960px)");
 
   return (
-    <div className="main-banner pt-28 pb-10 lg:pb-16">
+    <div className="main-banner pt-28 pb-5 lg:pb-5">
       <div className="container lg:max-w-[1241px] mb-10 lg:mb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 mb-10 lg:mb-20">
           <div className="flex flex-col justify-center mb-10 lg:mb-20 lg:m-0">
-            <h1 className="lg:text-4xl text-4xl text-[#285398] font-bold text-center lg:text-left">
+            <h1 className="lg:text-4xl text-4xl text-[#285398] font-bold text-center lg:text-left mb-2">
               Chào mừng bạn đến với
             </h1>
             {/* <h1 className="lg:text-4xl text-4xl text-[#285398] font-bold mb-5 text-center lg:text-left">
               Giao thông 365
             </h1> */}
 
-            <img src="/images/logo.png" alt="" className="max-w-[300px] mb-5" />
+            <img src="/images/logo.png" alt="" className="max-w-[200px] lg:max-w-[405px] mb-10" />
             <h2 className="lg:text-xl text-lg text-black text-center lg:text-left">
               Kiểm tra và quản lý vi phạm phạt nguội của bạn
             </h2>
@@ -109,7 +109,7 @@ const RegisterForm = () => {
   return (
     <div className="container lg:max-w-[1241px] mb-20 lg:mb-32 px-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div>
+        <div className="flex flex-col justify-center">
           <h1 className="font-black text-[#0D47A1] text-3xl mb-5 text-center lg:text-left">
             ĐĂNG KÝ HỘI VIÊN
           </h1>
@@ -117,7 +117,7 @@ const RegisterForm = () => {
             Chỉ cần nhập thông tin cơ bản, Giao thông 365 sẽ giúp bạn theo dõi
             và xử lý vi phạm giao thông một cách dễ dàng, tiện lợi!
           </p>
-          <form className="flex flex-col space-y-4 mx-auto">
+          <form className="flex flex-col space-y-4 mx-auto w-full">
             {/* Full Name */}
             <label>
               <input
@@ -268,7 +268,7 @@ const OurClient = () => {
   const isDesktop = useMediaQuery("(min-width: 960px)");
 
   return (
-    <div className="bg-[#285398] pt-16 pb-20">
+    <div className="pt-16 pb-20">
       <div className="container lg:max-w-[1241px]">
         <h1 className="text-center text-3xl font-bold mb-10">
           Đối tác của chúng tôi
