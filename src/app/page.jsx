@@ -31,7 +31,11 @@ const MainBanner = () => {
               Giao thông 365
             </h1> */}
 
-            <img src="/images/logo.png" alt="" className="w-full lg:max-w-[405px] mb-10" />
+            <img
+              src="/images/logo.png"
+              alt=""
+              className="w-full lg:max-w-[405px] mb-10"
+            />
             <h2 className="lg:text-xl text-lg text-black text-center lg:text-left">
               Kiểm tra và quản lý vi phạm phạt nguội của bạn
             </h2>
@@ -107,7 +111,7 @@ const MainBanner = () => {
 
 const RegisterForm = () => {
   return (
-    <div className="container lg:max-w-[1241px] mb-20 lg:mb-32 px-6">
+    <div className="container lg:max-w-[1241px] mb-20 lg:mb-10 px-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div className="flex flex-col justify-center">
           <h1 className="font-black text-[#0D47A1] text-3xl mb-5 text-center lg:text-left">
@@ -184,78 +188,80 @@ const Benefit = () => {
   const isDesktop = useMediaQuery("(min-width: 960px)");
 
   return (
-    <div className="container lg:max-w-[1241px] mb-10 lg:mb-10">
-      <h1 className="text-center text-3xl font-bold mb- text-[#285398]">
-        Lợi ích khi đăng ký hội viên
-      </h1>
-      <p className="text-center text-base text-gray-700 mb-10">
-        Trở thành hội viên GiaoThong365 để nhận thông báo phạt nguội tức thì và
-        nhiều ưu đãi khác!
-      </p>
+    <div className="bg-[#f3faff] py-20">
+      <div className="container lg:max-w-[1241px] mb-10 lg:mb-10">
+        <h1 className="text-center text-3xl font-bold mb- text-[#285398]">
+          Lợi ích khi đăng ký hội viên
+        </h1>
+        <p className="text-center text-base text-gray-700 mb-10">
+          Trở thành hội viên GiaoThong365 để nhận thông báo phạt nguội tức thì
+          và nhiều ưu đãi khác!
+        </p>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        <div>
-          <img src="/images/benefit.png" alt="" />
-        </div>
-        <div className="flex flex-col justify-center gap-10">
-          <div className="grid grid-cols-12 gap-5">
-            <div className="col-span-2 flex flex-col justify-center">
-              <img
-                className="block mx-auto"
-                src="/images/benefit-icon-1.png"
-                alt=""
-              />
-            </div>
-            <div className="col-span-10 flex flex-col justify-center">
-              <h1 className="font-black text-lg lg:text-xl text-[#285398]">
-                Cập nhật phạt nguội qua SMS/ Email
-              </h1>
-              <p className="text-base text-gray-700">
-                Nhận thông báo ngay lập tức khi có vi phạm phạt nguội liên quan
-                đến phương tiện của bạn, qua cả SMS và Email. Không còn lo lắng
-                bỏ lỡ thông tin quan trọng.
-              </p>
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <div>
+            <img src="/images/benefit.png" alt="" />
           </div>
-          <div className="grid grid-cols-12 gap-5">
-            <div className="col-span-2 flex flex-col justify-center">
-            <img
-                className="block mx-auto"
-                src="/images/benefit-icon-2.png"
-                alt=""
-              />
-            </div>
-            <div className="col-span-10 flex flex-col justify-center">
-              <h1 className="font-black  text-lg lg:text-xl text-[#285398]">
-                Cập nhật điểm nóng giao thông
-              </h1>
-              <p className="text-base text-gray-700">
-                Dễ dàng tìm kiếm và theo dõi các điểm có gắn camera phạt nguội
-                hoặc các điểm giao thông thường xảy ra vi phạm
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-12 gap-5">
-            <div className="col-span-2 flex flex-col justify-center">
-            <img
-                className="block mx-auto"
-                src="/images/benefit-icon-3.png"
-                alt=""
-              />
-            </div>
-            <div className="col-span-10 flex flex-col justify-center">
-              {isDesktop ? (
-                <h1 className="font-black  text-lg lg:text-xl text-[#285398]">
-                  Tư vấn, hỗ trợ xử lý vi phạm nhanh chóng
-                </h1>
-              ) : (
+          <div className="flex flex-col justify-center gap-10">
+            <div className="grid grid-cols-12 gap-5">
+              <div className="col-span-2 flex flex-col justify-center">
+                <img
+                  className="block mx-auto"
+                  src="/images/benefit-icon-1.png"
+                  alt=""
+                />
+              </div>
+              <div className="col-span-10 flex flex-col justify-center">
                 <h1 className="font-black text-lg lg:text-xl text-[#285398]">
-                  Tư vấn, hỗ trợ xử lý vi phạm <br /> nhanh chóng
+                  Cập nhật phạt nguội qua SMS/ Email
                 </h1>
-              )}
-              <p className="text-base text-gray-700">
-                Hỗ trợ khách hàng xử lý khi có vi phạm
-              </p>
+                <p className="text-base text-gray-700">
+                  Nhận thông báo ngay lập tức khi có vi phạm phạt nguội liên
+                  quan đến phương tiện của bạn, qua cả SMS và Email. Không còn
+                  lo lắng bỏ lỡ thông tin quan trọng.
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-12 gap-5">
+              <div className="col-span-2 flex flex-col justify-center">
+                <img
+                  className="block mx-auto"
+                  src="/images/benefit-icon-2.png"
+                  alt=""
+                />
+              </div>
+              <div className="col-span-10 flex flex-col justify-center">
+                <h1 className="font-black  text-lg lg:text-xl text-[#285398]">
+                  Cập nhật điểm nóng giao thông
+                </h1>
+                <p className="text-base text-gray-700">
+                  Dễ dàng tìm kiếm và theo dõi các điểm có gắn camera phạt nguội
+                  hoặc các điểm giao thông thường xảy ra vi phạm
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-12 gap-5">
+              <div className="col-span-2 flex flex-col justify-center">
+                <img
+                  className="block mx-auto"
+                  src="/images/benefit-icon-3.png"
+                  alt=""
+                />
+              </div>
+              <div className="col-span-10 flex flex-col justify-center">
+                {isDesktop ? (
+                  <h1 className="font-black  text-lg lg:text-xl text-[#285398]">
+                    Tư vấn, hỗ trợ xử lý vi phạm nhanh chóng
+                  </h1>
+                ) : (
+                  <h1 className="font-black text-lg lg:text-xl text-[#285398]">
+                    Tư vấn, hỗ trợ xử lý vi phạm <br /> nhanh chóng
+                  </h1>
+                )}
+                <p className="text-base text-gray-700">
+                  Hỗ trợ khách hàng xử lý khi có vi phạm
+                </p>
+              </div>
             </div>
           </div>
         </div>

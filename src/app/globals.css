@@ -28,9 +28,27 @@ select {
   background-repeat: no-repeat;
 }
 
-.footer-bg{
+/* .footer-bg{
   background: url("/images/footer-bg.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+} */
+
+.footer-bg {
+  position: relative;
+  /* Optional: adjust as needed */
+  overflow: hidden;
+}
+
+.footer-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("/images/footer-bg.png") center / cover no-repeat;
+  opacity: 0.5; /* Adjust opacity here */
+  z-index: -1; /* Ensure it stays behind content */
 }
