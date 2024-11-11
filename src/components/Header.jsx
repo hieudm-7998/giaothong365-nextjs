@@ -38,7 +38,7 @@ const DesktopHeader = () => {
   const router = useRouter();
 
   return (
-    <div className="absolute w-screen top-0">
+    <div className="absolute w-full top-0">
       <div className="container lg:max-w-[1241px] py-5 mb-10">
         <div className="flex justify-between items-center">
           <div>
