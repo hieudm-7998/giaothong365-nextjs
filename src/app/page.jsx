@@ -22,8 +22,8 @@ const MainBanner = () => {
   return (
     <div className="main-banner pt-28 pb-5 lg:pb-5">
       <div className="container lg:max-w-[1241px] mb-10 lg:mb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 mb-10 lg:mb-20">
-          <div className="flex flex-col justify-center mb-10 lg:mb-20 lg:m-0">
+        <div className="grid grid-cols-1 lg:grid-cols-5 mb-10 lg:mb-20">
+          <div className="flex flex-col justify-center mb-10 lg:mb-20 lg:m-0 col-span-1 lg:col-span-2">
             <h1 className="lg:text-4xl text-4xl text-[#285398] font-bold text-center lg:text-left mb-2">
               Chào mừng bạn đến với
             </h1>
@@ -42,7 +42,7 @@ const MainBanner = () => {
               Đăng ký hội viên ngay
             </Button>
           </div>
-          <div>
+          <div className="col-span-1 lg:col-span-3">
             <img
               src="/images/banner-giao-thong-360.png"
               className="block mx-auto"
@@ -184,7 +184,7 @@ const Benefit = () => {
   const isDesktop = useMediaQuery("(min-width: 960px)");
 
   return (
-    <div className="container lg:max-w-[1241px] mb-20 lg:mb-32">
+    <div className="container lg:max-w-[1241px] mb-20 lg:mb-10">
       <h1 className="text-center text-3xl font-bold mb- text-[#285398]">
         Lợi ích khi đăng ký hội viên
       </h1>
@@ -202,7 +202,7 @@ const Benefit = () => {
             <div className="col-span-2 flex flex-col justify-center">
               <img
                 className="block mx-auto"
-                src="/images/benefit-icon.svg"
+                src="/images/benefit-icon-1.png"
                 alt=""
               />
             </div>
@@ -219,9 +219,9 @@ const Benefit = () => {
           </div>
           <div className="grid grid-cols-12 gap-5">
             <div className="col-span-2 flex flex-col justify-center">
-              <img
+            <img
                 className="block mx-auto"
-                src="/images/benefit-icon.svg"
+                src="/images/benefit-icon-2.png"
                 alt=""
               />
             </div>
@@ -237,9 +237,9 @@ const Benefit = () => {
           </div>
           <div className="grid grid-cols-12 gap-5">
             <div className="col-span-2 flex flex-col justify-center">
-              <img
+            <img
                 className="block mx-auto"
-                src="/images/benefit-icon.svg"
+                src="/images/benefit-icon-3.png"
                 alt=""
               />
             </div>
@@ -268,36 +268,36 @@ const OurClient = () => {
   const isDesktop = useMediaQuery("(min-width: 960px)");
 
   return (
-    <div className="pt-16 pb-20">
+    <div className="pt-16">
       <div className="container lg:max-w-[1241px]">
-        <h1 className="text-center text-3xl font-bold mb-10">
+        <h1 className="text-center text-3xl font-bold text-[#285398]">
           Đối tác của chúng tôi
         </h1>
         <Swiper
           spaceBetween={50}
           autoplay
-          slidesPerView={isDesktop ? 5 : 3}
+          slidesPerView={isDesktop ? 5 : 2}
           // onSlideChange={() => console.log("slide change")}
           // onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide>
-            <img src="/images/vni-logo.svg" alt="" className="block mx-auto" />
+            <img src="/images/vni-logo.png" alt="" className="block mx-auto" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/images/mic-logo.svg" alt="" className="block mx-auto" />
+            <img src="/images/mic-logo.png" alt="" className="block mx-auto" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/images/pvi-logo.svg" alt="" className="block mx-auto" />
+            <img src="/images/pvi-logo.png" alt="" className="block mx-auto" />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="/images/tasco-logo.svg"
+              src="/images/tasco-logo.png"
               alt=""
               className="block mx-auto"
             />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/images/pti-logo.svg" alt="" className="block mx-auto" />
+            <img src="/images/pti-logo.png" alt="" className="block mx-auto" />
           </SwiperSlide>
         </Swiper>
       </div>
