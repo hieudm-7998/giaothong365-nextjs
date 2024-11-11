@@ -31,7 +31,7 @@ const MainBanner = () => {
               Giao thông 365
             </h1> */}
 
-            <img src="/images/logo.png" alt="" className="max-w-[200px] lg:max-w-[405px] mb-10" />
+            <img src="/images/logo.png" alt="" className="w-full lg:max-w-[405px] mb-10" />
             <h2 className="lg:text-xl text-lg text-black text-center lg:text-left">
               Kiểm tra và quản lý vi phạm phạt nguội của bạn
             </h2>
@@ -184,7 +184,7 @@ const Benefit = () => {
   const isDesktop = useMediaQuery("(min-width: 960px)");
 
   return (
-    <div className="container lg:max-w-[1241px] mb-20 lg:mb-10">
+    <div className="container lg:max-w-[1241px] mb-10 lg:mb-10">
       <h1 className="text-center text-3xl font-bold mb- text-[#285398]">
         Lợi ích khi đăng ký hội viên
       </h1>
@@ -268,7 +268,7 @@ const OurClient = () => {
   const isDesktop = useMediaQuery("(min-width: 960px)");
 
   return (
-    <div className="pt-16">
+    <div className="pt-10">
       <div className="container lg:max-w-[1241px]">
         <h1 className="text-center text-3xl font-bold text-[#285398]">
           Đối tác của chúng tôi
