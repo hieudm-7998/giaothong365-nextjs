@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +10,15 @@
   border: none;
 }
 
+.radix-themes {
+	--default-font-family: var(--font-montserrat);
+}
+
 body {
+  font-family: "Montserrat", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   position: relative;
@@ -23,6 +33,20 @@ select {
 
 .main-banner {
   background: url("/images/bg-giao-thong-360.png");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.news-bg{
+  background: url("/images/news-bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.benefit-bg{
+  background: url("/images/loi-ich-dang-ky-hoi-vien-bg.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

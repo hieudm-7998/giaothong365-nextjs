@@ -1,14 +1,16 @@
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
 import { Theme } from "@radix-ui/themes";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { LoginProvider } from "@/context/LoginContext";
 
-const robotoFont = Inter({
-  subsets: ["latin"],
+const montserratFont = Montserrat({
+  subsets: ["vietnamese"],
   display: "swap",
-  weight: ["100", "300", "400", "500", "700", "900"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-montserrat",
 });
 
 export const metadata = {
@@ -20,11 +22,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="vi">
       {/* <body className={`antialiased`}> */}
-      <body className={`${robotoFont.variable} antialiased`}>
+      <body className={`${montserratFont.className} antialiased`}>
         <Theme>
-          <Header />
-          {children}
-          <Footer />
+          <LoginProvider>
+            <Header />
+            {children}
+            <Footer />
+          </LoginProvider>
         </Theme>
       </body>
     </html>

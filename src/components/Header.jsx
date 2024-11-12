@@ -26,6 +26,12 @@ import {
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import {
+  DEFAULT,
+  HAS_VIOLATION,
+  NO_VIOLATION,
+  useLoginContext,
+} from "@/context/LoginContext";
 
 const Header = () => {
   const isDesktop = useMediaQuery("(min-width: 960px)");
@@ -33,13 +39,13 @@ const Header = () => {
 };
 
 const DesktopHeader = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+  const { loginType } = useLoginContext();
 
   return (
     <div className="absolute w-full top-0">
-      <div className="container lg:max-w-[1241px] py-5 mb-10">
+      <div className="container lg:max-w-[1241px] py-7">
         <div className="flex justify-between items-center">
           <div>
             <Link href="/" className="text-base">
@@ -50,85 +56,84 @@ const DesktopHeader = () => {
             <div className="flex items-center gap-10">
               <Link
                 href="/"
-                className={`text-base hover:text-[#285398] hover:opacity-85 font-semibold transition-all ${
-                  pathname === "/" &&
-                  "border-b-2 border-b-[#285398] text-[#285398] border-l-0 border-t-0 border-r-0 border-solid font-bold"
+                className={`text-base hover:opacity-85 transition-all uppercase text-white ${
+                  pathname === "/" && "font-semibold"
                 }`}
               >
                 Trang chủ
               </Link>
-              <DropdownMenu.Root>
-                <DropdownMenu.Trigger>
-                  <Button
-                    variant="soft"
-                    className="hover:cursor-pointer  font-semibold transition-all !px-0 text-base bg-transparent hover:opacity-85 outline-none border-none text-black"
-                  >
-                    Tra cứu
-                    <DropdownMenu.TriggerIcon />
-                  </Button>
-                </DropdownMenu.Trigger>
-                <DropdownMenu.Content>
-                  <DropdownMenu.Item
-                    className="hover:bg-[#285398] hover:cursor-pointer"
-                    onClick={() => router.push("/tra-cuu-phat-nguoi")}
-                  >
-                    Tra cứu phạt nguội
-                  </DropdownMenu.Item>
-                  <DropdownMenu.Item
-                    className="hover:bg-[#285398] hover:cursor-pointer"
-                    onClick={() => router.push("/tra-cuu-diem-phat-nguoi")}
-                  >
-                    Điểm phạt nguội
-                  </DropdownMenu.Item>
-                </DropdownMenu.Content>
-              </DropdownMenu.Root>
               <Link
-                href="/"
-                className={`text-base hover:text-[#285398] font-semibold hover:opacity-85 transition-all ${
-                  pathname === "/faqs" &&
-                  "border-b-2 border-b-[#285398] text-[#285398] border-l-0 border-t-0 border-r-0 border-solid font-bold"
+                href="/tra-cuu-phat-nguoi"
+                className={`text-base hover:opacity-85 transition-all uppercase text-white ${
+                  pathname === "/tra-cuu-phat-nguoi" && "font-semibold"
                 }`}
               >
-                FAQs
+                Tra cứu phạt nguội
               </Link>
               <Link
-                href="/"
-                className={`text-base hover:text-[#285398] hover:opacity-85 font-semibold transition-all ${
-                  pathname === "/hop-tac" &&
-                  "border-b-2 border-b-[#285398] text-[#285398] border-l-0 border-t-0 border-r-0 border-solid font-bold"
+                href="/tra-cuu-diem-phat-nguoi"
+                className={`text-base hover:opacity-85 transition-all uppercase text-white ${
+                  pathname === "/tra-cuu-diem-phat-nguoi" && "font-semibold"
                 }`}
               >
-                Hợp tác
-              </Link>
-              <Link
-                href="/"
-                className={`text-base hover:text-[#285398] hover:opacity-85 font-semibold transition-all ${
-                  pathname === "/lien-he" &&
-                  "border-b-2 border-b-[#285398] text-[#285398] border-l-0 border-t-0 border-r-0 border-solid font-bold"
-                }`}
-              >
-                Liên hệ
+                Điểm phạt nguội
               </Link>
               <Link
                 href="/tin-tuc"
-                className={`text-base hover:text-[#285398] hover:opacity-85 font-semibold transition-all ${
-                  pathname === "/tin-tuc" &&
-                  "border-b-2 border-b-[#285398] text-[#285398] border-l-0 border-t-0 border-r-0 border-solid font-bold"
+                className={`text-base hover:opacity-85 transition-all uppercase text-white ${
+                  pathname === "/tin-tuc" && "font-semibold"
                 }`}
               >
                 Tin tức
               </Link>
             </div>
-            {isLoggedIn ? (
+            {loginType === HAS_VIOLATION && (
               <>
                 <DropdownMenu.Root>
                   <DropdownMenu.Trigger>
                     <Button
                       variant="soft"
                       radius="full"
-                      className="!w-10 !h-10 hover:cursor-pointer border-[#285398] border border-solid !p-2 relative"
+                      className="!w-10 !h-10 hover:cursor-pointer border-[#285398] border border-solid !p-0 relative"
                     >
-                      <UserRound />
+                      <svg
+                        // width="40px"
+                        // height="40px"
+                        viewBox="-1.6 -1.6 19.20 19.20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        stroke="#ffffff"
+                        strokeWidth="0.00016"
+                        // className="!w-60[px] !h-[60px]"
+                      >
+                        <g id="SVGRepo_bgCarrier" strokeWidth="0">
+                          <rect
+                            x="-1.6"
+                            y="-1.6"
+                            width="19.20"
+                            height="19.20"
+                            rx="9.6"
+                            fill="#ffffff"
+                            strokeWidth="0"
+                          ></rect>
+                        </g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          {" "}
+                          <path
+                            d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"
+                            fill="#2c6672"
+                          ></path>{" "}
+                          <path
+                            d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z"
+                            fill="#2c6672"
+                          ></path>{" "}
+                        </g>
+                      </svg>
                       <div className="absolute flex items-center justify-center flex-col w-5 h-5 z-20 text-white text-sm -right-2 -top-1 bg-red-600 rounded-full">
                         1
                       </div>
@@ -159,16 +164,83 @@ const DesktopHeader = () => {
                   </DropdownMenu.Content>
                 </DropdownMenu.Root>
               </>
-            ) : (
+            )}
+            {loginType === NO_VIOLATION && (
               <>
-                <div className="flex items-center gap-2">
-                  <RegisterDialog />
-                  <LoginDialog />
-                </div>
+                <DropdownMenu.Root>
+                  <DropdownMenu.Trigger>
+                    <Button
+                      variant="soft"
+                      radius="full"
+                      className="!w-10 !h-10 hover:cursor-pointer border-[#285398] border border-solid !p-0 relative"
+                    >
+                      <svg
+                        // width="40px"
+                        // height="40px"
+                        viewBox="-1.6 -1.6 19.20 19.20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        stroke="#ffffff"
+                        strokeWidth="0.00016"
+                        // className="!w-60[px] !h-[60px]"
+                      >
+                        <g id="SVGRepo_bgCarrier" strokeWidth="0">
+                          <rect
+                            x="-1.6"
+                            y="-1.6"
+                            width="19.20"
+                            height="19.20"
+                            rx="9.6"
+                            fill="#ffffff"
+                            strokeWidth="0"
+                          ></rect>
+                        </g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          {" "}
+                          <path
+                            d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"
+                            fill="#2c6672"
+                          ></path>{" "}
+                          <path
+                            d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z"
+                            fill="#2c6672"
+                          ></path>{" "}
+                        </g>
+                      </svg>
+                    </Button>
+                  </DropdownMenu.Trigger>
+                  <DropdownMenu.Content align="end">
+                    <DropdownMenu.Item className="hover:cursor-pointer">
+                      <User className="w-5" />
+                      Tài khoản
+                    </DropdownMenu.Item>
+                    <DropdownMenu.Item className="hover:cursor-pointer">
+                      <Settings className="w-5" />
+                      Cài đặt
+                    </DropdownMenu.Item>
+                    <DropdownMenu.Separator />
+                    <DropdownMenu.Item className="hover:cursor-pointer">
+                      <LogOut className="w-5" />
+                      Đăng xuất
+                    </DropdownMenu.Item>
+                  </DropdownMenu.Content>
+                </DropdownMenu.Root>
               </>
             )}
           </div>
         </div>
+        {loginType === DEFAULT && (
+          <div className="flex justify-end gap-2">
+            <LoginDialog />
+            <span className="text-white">|</span>
+            <RegisterDialog />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -365,12 +437,9 @@ const RegisterDialog = () => {
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <Button
-          variant="outline"
-          className="!h-8 hover:cursor-pointer hover:opacity-85 text-base transition-all !outline-[#285398] text-[#285398]"
-        >
+        <button className="text-white transition-all hover:opacity-85 text-sm">
           Đăng ký
-        </Button>
+        </button>
       </Dialog.Trigger>
 
       <Dialog.Content maxWidth="450px">
@@ -385,13 +454,13 @@ const RegisterDialog = () => {
             <Text as="div" size="2" mb="1" weight="bold">
               Họ và tên
             </Text>
-            <TextField.Root placeholder="Họ và tên..." />
+            <TextField.Root placeholder="Họ và tên" />
           </label>
           <label>
             <Text as="div" size="2" mb="1" weight="bold">
               Số điện thoại
             </Text>
-            <TextField.Root placeholder="Số điện thoại..." />
+            <TextField.Root placeholder="Số điện thoại" />
           </label>
           <label>
             <Text as="div" size="2" mb="1" weight="bold">
@@ -415,6 +484,18 @@ const RegisterDialog = () => {
               <option value="motorbike">Xe máy</option>
               <option value="bicycle">Xe đạp</option>
             </select>
+          </label>
+          <label>
+            <Text as="div" size="2" mb="1" weight="bold">
+              Mật khẩu
+            </Text>
+            <TextField.Root type="password" placeholder="Mật khẩu" />
+          </label>
+          <label>
+            <Text as="div" size="2" mb="1" weight="bold">
+              Nhập lại mật khẩu
+            </Text>
+            <TextField.Root type="password" placeholder="Nhập lại mật khẩu" />
           </label>
           <label className="flex items-center space-x-2">
             <input type="checkbox" className="form-checkbox" />
@@ -443,9 +524,9 @@ const LoginDialog = () => {
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <Button className="h-8 hover:cursor-pointer hover:opacity-85 text-base transition-all bg-[#285398]">
+        <button className="text-white transition-all hover:opacity-85 text-sm">
           Đăng nhập
-        </Button>
+        </button>
       </Dialog.Trigger>
 
       <Dialog.Content maxWidth="450px">
@@ -460,13 +541,13 @@ const LoginDialog = () => {
             <Text as="div" size="2" mb="1" weight="bold">
               Số điện thoại
             </Text>
-            <TextField.Root placeholder="Số điện thoại..." />
+            <TextField.Root placeholder="Số điện thoại " />
           </label>
           <label>
             <Text as="div" size="2" mb="1" weight="bold">
               Mật khẩu
             </Text>
-            <TextField.Root type="password" placeholder="Nhập mật khẩu..." />
+            <TextField.Root type="password" placeholder="Nhập mật khẩu " />
           </label>
         </Flex>
 

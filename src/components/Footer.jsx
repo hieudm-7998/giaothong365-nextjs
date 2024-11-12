@@ -24,7 +24,7 @@ function Footer() {
           className="text-base   lg:text-black block text-center lg:text-left"
           href="/"
         >
-          <img src="/images/logo.png" alt="" className="max-w-[300px] mb-10" />
+          <img src="/images/logo-black.png" alt="" className="max-w-[300px] mb-10" />
         </Link>
         <div className="grid lg:grid-cols-4 gap-5 lg:gap-10">
           <div className="col-span-1">
