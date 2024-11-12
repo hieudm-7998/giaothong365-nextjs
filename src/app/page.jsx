@@ -29,17 +29,8 @@ const MainBanner = () => {
   const { toggleLoginType } = useLoginContext();
 
   return (
-    <div className="main-banner py-28">
+    <div className="main-banner py-14">
       <div className="container lg:max-w-[1241px] mb-10 lg:mb-20">
-        <Button onClick={() => toggleLoginType("default")}>
-          Chưa ĐK (Mặc định)
-        </Button>
-        <Button onClick={() => toggleLoginType("no-violation")}>
-          Đã ĐN (Ko lỗi)
-        </Button>
-        <Button onClick={() => toggleLoginType("has-violation")}>
-          Đã ĐN (Có lỗi)
-        </Button>
         <div className="my-10 lg:my-20 lg:m-0 col-span-1 lg:col-span-2">
           {loginType === DEFAULT && (
             <div className="bg-white/20 lg:max-w-[560px] rounded-2xl p-10 flex flex-col items-center">
@@ -258,6 +249,15 @@ const MainBanner = () => {
             </>
           )}
         </div>
+        <Button onClick={() => toggleLoginType("default")}>
+          Chưa ĐK (Mặc định)
+        </Button>
+        <Button onClick={() => toggleLoginType("no-violation")}>
+          Đã ĐN (Ko lỗi)
+        </Button>
+        <Button onClick={() => toggleLoginType("has-violation")}>
+          Đã ĐN (Có lỗi)
+        </Button>
       </div>
     </div>
   );
@@ -364,10 +364,10 @@ const NewsBlock = () => {
   ];
 
   return (
-    <div className="news-bg py-20">
+    <div className="news-bg py-10">
       <div className="container lg:max-w-[1024px]">
         <div className="flex justify-between items-center mb-5">
-          <h1 className="text-2xl text-black font-semibold uppercase">
+          <h1 className="text-3xl text-[#0d47a1] font-semibold uppercase">
             Tin tức
           </h1>
           <button className="text-[#3c73a7] text-xl font-semibold">
@@ -386,7 +386,7 @@ const NewsBlock = () => {
               </div>
               <div className="p-5">
                 <p className="text-[#898989] text-sm">{news[0].date}</p>
-                <h1 className="text-lg font-semibold line-clamp-2 mb-1">
+                <h1 className="text-lg text-[#0d47a1] font-semibold line-clamp-2 mb-1">
                   {news[0].title}
                 </h1>
                 <p className="line-clamp-4 mb-2">{news[0].description}</p>
@@ -413,7 +413,7 @@ const NewsBlock = () => {
                 </div>
                 <div className="col-span-2 p-3">
                   <p className="text-[#898989] text-xs">{item.date}</p>
-                  <h1 className="text-base font-semibold line-clamp-2 mb-1">
+                  <h1 className="text-base text-[#0d47a1] font-semibold line-clamp-2 mb-1">
                     {item.title}
                   </h1>
                   <p className="line-clamp-3 mb-2 text-xs">

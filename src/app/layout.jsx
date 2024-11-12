@@ -5,6 +5,7 @@ import { Theme } from "@radix-ui/themes";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { LoginProvider } from "@/context/LoginContext";
+import { IsHomeProvider } from "@/context/HeaderContext";
 
 const montserratFont = Montserrat({
   subsets: ["vietnamese"],
@@ -25,9 +26,11 @@ export default function RootLayout({ children }) {
       <body className={`${montserratFont.className} antialiased`}>
         <Theme>
           <LoginProvider>
-            <Header />
-            {children}
-            <Footer />
+            <IsHomeProvider>
+              <Header />
+              {children}
+              <Footer />
+            </IsHomeProvider>
           </LoginProvider>
         </Theme>
       </body>

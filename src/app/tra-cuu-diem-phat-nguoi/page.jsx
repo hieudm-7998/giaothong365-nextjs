@@ -1,6 +1,7 @@
 "use client";
 
 import RegisterSection from "@/components/RegisterSection";
+import TraCuuPhatNguoiBanner from "@/components/TraCuuPhatNguoiBanner";
 import { Button } from "@radix-ui/themes";
 import { Flame, Map, MapPin } from "lucide-react";
 import { useState } from "react";
@@ -10,7 +11,8 @@ function TraCuuDiemPhatNguoi() {
 
   return (
     <>
-      <div className="container lg:max-w-[1241px] mb-20 pt-28">
+      <TraCuuPhatNguoiBanner />
+      <div className="container lg:max-w-[1241px] mb-20 pt-16">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
           <div className="col-span-4 lg:col-span-1">
             <div

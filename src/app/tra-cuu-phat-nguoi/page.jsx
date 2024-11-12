@@ -1,10 +1,12 @@
 import RegisterSection from "@/components/RegisterSection";
 import React from "react";
+import TraCuuPhatNguoiBanner from "@/components/TraCuuPhatNguoiBanner";
 
 function TraCuuPhatNguoi() {
   return (
     <>
-      <div className="container lg:max-w-[1241px] mb-20 pt-28">
+      <TraCuuPhatNguoiBanner />
+      <div className="container lg:max-w-[1241px] mb-20 pt-16">
         <div className="w-full lg:w-2/3 mx-auto rounded-2xl shadow-xl p-10">
           <h1 className="text-3xl text-center font-bold text-[#285398] mb-10">
             Tra cứu phạt nguội

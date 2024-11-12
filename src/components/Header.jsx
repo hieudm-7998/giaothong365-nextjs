@@ -32,6 +32,7 @@ import {
   NO_VIOLATION,
   useLoginContext,
 } from "@/context/LoginContext";
+import { useIsHome } from "@/context/HeaderContext";
 
 const Header = () => {
   const isDesktop = useMediaQuery("(min-width: 960px)");
@@ -42,50 +43,69 @@ const DesktopHeader = () => {
   const pathname = usePathname();
   const router = useRouter();
   const { loginType } = useLoginContext();
+  const isHome = useIsHome();
 
   return (
-    <div className="absolute w-full top-0">
+    <div className={`absolute w-full top-0 ${isHome ? "" : "bg-white"}`}>
       <div className="container lg:max-w-[1241px] py-7">
         <div className="flex justify-between items-center">
           <div>
             <Link href="/" className="text-base">
-              <img src="/images/logo.png" alt="" className="max-w-[250px]" />
+              <img
+                src={`/images/${isHome ? "logo" : "logo-black"}.png`}
+                alt=""
+                className="max-w-[350px]"
+              />
             </Link>
           </div>
           <div className="flex items-center gap-10">
-            <div className="flex items-center gap-10">
-              <Link
-                href="/"
-                className={`text-base hover:opacity-85 transition-all uppercase text-white ${
-                  pathname === "/" && "font-semibold"
-                }`}
-              >
-                Trang chủ
-              </Link>
-              <Link
-                href="/tra-cuu-phat-nguoi"
-                className={`text-base hover:opacity-85 transition-all uppercase text-white ${
-                  pathname === "/tra-cuu-phat-nguoi" && "font-semibold"
-                }`}
-              >
-                Tra cứu phạt nguội
-              </Link>
-              <Link
-                href="/tra-cuu-diem-phat-nguoi"
-                className={`text-base hover:opacity-85 transition-all uppercase text-white ${
-                  pathname === "/tra-cuu-diem-phat-nguoi" && "font-semibold"
-                }`}
-              >
-                Điểm phạt nguội
-              </Link>
-              <Link
-                href="/tin-tuc"
-                className={`text-base hover:opacity-85 transition-all uppercase text-white ${
-                  pathname === "/tin-tuc" && "font-semibold"
-                }`}
-              >
-                Tin tức
-              </Link>
+            <div>
+              <div className="flex items-center gap-10">
+                <Link
+                  href="/"
+                  className={`text-base hover:opacity-85 transition-all uppercase ${
+                    isHome ? "text-white" : "text-[#0d47a1]"
+                  } ${pathname === "/" && "font-semibold"}`}
+                >
+                  Trang chủ
+                </Link>
+                <Link
+                  href="/tra-cuu-phat-nguoi"
+                  className={`text-base hover:opacity-85 transition-all uppercase ${
+                    isHome ? "text-white" : "text-[#0d47a1]"
+                  } ${pathname === "/tra-cuu-phat-nguoi" && "font-semibold"}`}
+                >
+                  Tra cứu phạt nguội
+                </Link>
+                <Link
+                  href="/tra-cuu-diem-phat-nguoi"
+                  className={`text-base hover:opacity-85 transition-all uppercase ${
+                    isHome ? "text-white" : "text-[#0d47a1]"
+                  } ${
+                    pathname === "/tra-cuu-diem-phat-nguoi" && "font-semibold"
+                  }`}
+                >
+                  Điểm phạt nguội
+                </Link>
+                <Link
+                  href="/tin-tuc"
+                  className={`text-base hover:opacity-85 transition-all uppercase ${
+                    isHome ? "text-white" : "text-[#0d47a1]"
+                  } ${pathname === "/tin-tuc" && "font-semibold"}`}
+                >
+                  Tin tức
+                </Link>
+              </div>
+
+              {loginType === DEFAULT && (
+                <div className="flex justify-end gap-2">
+                  <LoginDialog />
+                  <span className={isHome ? "text-white" : "text-[#0d47a1]"}>
+                    |
+                  </span>
+                  <RegisterDialog />
+                </div>
+              )}
             </div>
             {loginType === HAS_VIOLATION && (
               <>
@@ -234,13 +254,6 @@ const DesktopHeader = () => {
             )}
           </div>
         </div>
-        {loginType === DEFAULT && (
-          <div className="flex justify-end gap-2">
-            <LoginDialog />
-            <span className="text-white">|</span>
-            <RegisterDialog />
-          </div>
-        )}
       </div>
     </div>
   );
@@ -434,10 +447,15 @@ const MobileHeader = () => {
 };
 
 const RegisterDialog = () => {
+  const isHome = useIsHome();
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <button className="text-white transition-all hover:opacity-85 text-sm">
+        <button
+          className={`transition-all hover:opacity-85 text-sm ${
+            isHome ? "text-white" : "text-[#0d47a1]"
+          }`}
+        >
           Đăng ký
         </button>
       </Dialog.Trigger>
@@ -521,10 +539,15 @@ const RegisterDialog = () => {
 };
 
 const LoginDialog = () => {
+  const isHome = useIsHome();
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <button className="text-white transition-all hover:opacity-85 text-sm">
+        <button
+          className={`transition-all hover:opacity-85 text-sm ${
+            isHome ? "text-white" : "text-[#0d47a1]"
+          }`}
+        >
           Đăng nhập
         </button>
       </Dialog.Trigger>
