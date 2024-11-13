@@ -32,7 +32,7 @@ function Footer() {
         </Link>
         <div className="grid lg:grid-cols-4 gap-5 lg:gap-10">
           <div className="col-span-1">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-4">
               <Link
                 href="/"
                 className={`text-base   lg:text-black hover:opacity-85 transition-all ${
