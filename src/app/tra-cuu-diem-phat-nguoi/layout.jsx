@@ -21,7 +21,6 @@ export default function RootLayout({ children }) {
     <>
       <NoBGHeader />
       {children}
-      <Footer />
     </>
   );
 }

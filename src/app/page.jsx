@@ -11,12 +11,13 @@ import {
   useLoginContext,
 } from "@/context/LoginContext";
 import { ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   return (
     <>
       <MainBanner />
-      <NewsBlock />
+      <NewsBlock title="Tin tức" />
       <Benefit />
       <OurClient />
     </>
@@ -126,7 +127,7 @@ const MainBanner = () => {
               <h1 className="lg:text-[31px] gap-3 text-xl text-center text-white font-bold lg:text-left uppercase mb-3">
                 Chào mừng bạn đến với
               </h1>
-              <h1 className=" uppercase text-[#89a4d5] text-3xl lg:text-5xl font-black text-center mb-3">
+              <h1 className=" uppercase text-[#89a4d5] text-3xl lg:text-5xl font-black text-center lg:text-left mb-3">
                 Giao thông <span className="text-[#da9956]">365</span>
               </h1>
               <h2 className="text-base text-white text-center lg:text-left mb-5">
@@ -190,7 +191,7 @@ const MainBanner = () => {
               <h1 className="lg:text-[31px] gap-3 text-xl text-center text-white font-bold lg:text-left uppercase mb-3">
                 Chào mừng bạn đến với
               </h1>
-              <h1 className=" uppercase text-[#89a4d5] text-3xl lg:text-5xl font-black text-center mb-3">
+              <h1 className=" uppercase text-[#89a4d5] text-3xl lg:text-5xl font-black lg:text-left text-center mb-3">
                 Giao thông <span className="text-[#da9956]">365</span>
               </h1>
               <h2 className="text-base text-white text-center lg:text-left mb-5">
@@ -338,7 +339,7 @@ const MainBanner = () => {
 //   );
 // };
 
-const NewsBlock = () => {
+export const NewsBlock = ({title}) => {
   const news = [
     {
       date: "19/09/2024",
@@ -363,14 +364,16 @@ const NewsBlock = () => {
     },
   ];
 
+  const router = useRouter()
+
   return (
     <div className="news-bg py-10">
       <div className="container lg:max-w-[1024px]">
         <div className="flex justify-between items-center mb-5">
           <h1 className="text-3xl text-[#0d47a1] font-semibold uppercase">
-            Tin tức
+            {title}
           </h1>
-          <button className="text-[#3c73a7] text-xl font-semibold">
+          <button className="text-[#3c73a7] text-xl font-semibold" onClick={() => router.push('/tin-tuc')}>
             Xem tất cả
           </button>
         </div>

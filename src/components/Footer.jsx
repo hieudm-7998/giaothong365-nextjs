@@ -24,7 +24,11 @@ function Footer() {
           className="text-base   lg:text-black block text-center lg:text-left"
           href="/"
         >
-          <img src="/images/logo-black.png" alt="" className="max-w-[300px] mb-10" />
+          <img
+            src="/images/logo-black.png"
+            alt=""
+            className="max-w-[300px] mb-10"
+          />
         </Link>
         <div className="grid lg:grid-cols-4 gap-5 lg:gap-10">
           <div className="col-span-1">
@@ -32,35 +36,31 @@ function Footer() {
               <Link
                 href="/"
                 className={`text-base   lg:text-black hover:opacity-85 transition-all ${
-                  pathname === "/" &&
-                  "  lg:text-[#285398]  font-semibold"
+                  pathname === "/" && "  lg:text-[#285398]  font-semibold"
                 }`}
               >
                 Trang chủ
               </Link>
               <Link
-                href="/tra-cuu"
+                href="/"
                 className={`text-base   lg:text-black hover:opacity-85 transition-all ${
-                  pathname === "/tra-cuu" &&
-                  "  lg:text-[#285398] font-semibold"
+                  pathname === "/" && "  lg:text-[#285398] font-semibold"
                 }`}
               >
                 Tra cứu
               </Link>
               <Link
-                href="/ho-tro"
+                href="/"
                 className={`text-base   lg:text-black hover:opacity-85 transition-all ${
-                  pathname === "/ho-tro" &&
-                  "  lg:text-[#285398] font-semibold"
+                  pathname === "/" && "lg:text-[#285398] font-semibold"
                 }`}
               >
                 Hỗ trợ
               </Link>
               <Link
-                href="/chinh-sach-dieu-khoan"
+                href="/"
                 className={`text-base   lg:text-black hover:opacity-85 transition-all ${
-                  pathname === "/chinh-sach-dieu-khoan" &&
-                  "  lg:text-[#285398] font-semibold"
+                  pathname === "/" && "  lg:text-[#285398] font-semibold"
                 }`}
               >
                 Chính sách điều khoản

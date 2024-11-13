@@ -11,7 +11,7 @@
 }
 
 .radix-themes {
-	--default-font-family: var(--font-montserrat);
+	--default-font-family: var(--font-montserrat) !important;
 }
 
 body {
