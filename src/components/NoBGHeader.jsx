@@ -7,20 +7,15 @@ import {
   DropdownMenu,
   Flex,
   IconButton,
-  Select,
   Text,
   TextField,
 } from "@radix-ui/themes";
-import * as Collapsible from "@radix-ui/react-collapsible";
 import {
   AlertCircle,
-  ChevronDown,
-  ChevronRight,
   LogOut,
   Menu,
   Settings,
   User,
-  UserRound,
   X,
 } from "lucide-react";
 import Link from "next/link";
@@ -34,7 +29,7 @@ import {
 } from "@/context/LoginContext";
 import { useIsHome } from "@/context/HeaderContext";
 
-const Header = () => {
+const NoBGHeader = () => {
   const isDesktop = useMediaQuery("(min-width: 960px)");
   return <>{isDesktop ? <DesktopHeader /> : <MobileHeader />}</>;
 };
@@ -46,13 +41,13 @@ const DesktopHeader = () => {
   const isHome = useIsHome();
 
   return (
-    <div className={`absolute w-full top-0 ${isHome ? "" : "bg-white"}`}>
+    <div className={`absolute w-full top-0 bg-white`}>
       <div className="container lg:max-w-[1241px] py-7">
         <div className="flex justify-between items-center">
           <div>
             <Link href="/" className="text-base">
               <img
-                src={`/images/${isHome ? "logo" : "logo-black"}.png`}
+                src={`/images/logo-black.png`}
                 alt=""
                 className="max-w-[350px]"
               />
@@ -269,7 +264,7 @@ const MobileHeader = () => {
   
   return (
     <div
-      className={`absolute w-screen top-0 ${isShow && isHome ? "bg-white" : "bg-transparent"} `}
+      className={`absolute w-screen top-0 bg-white`}
     >
       <div className="py-5 relative">
         <div className="container">
@@ -277,7 +272,7 @@ const MobileHeader = () => {
             <div>
               <Link href="/" className="text-base text-white">
                 <img
-                  src={`/images/${isShow && isHome ? "logo-black" : "logo"}.png`}
+                  src={`/images/logo-black.png`}
                   alt=""
                   className="max-w-[200px]"
                 />
@@ -432,7 +427,7 @@ const MobileHeader = () => {
                 {isShow ? (
                   <X className="text-[#285398]" />
                 ) : (
-                  <Menu className="text-white" />
+                  <Menu className="text-[#285398]" />
                 )}
               </IconButton>
             </div>
@@ -779,4 +774,4 @@ const MobileRegisterDialog = () => {
     </Dialog.Root>
   );
 };
-export default Header;
+export default NoBGHeader;

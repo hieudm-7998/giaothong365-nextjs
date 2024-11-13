@@ -33,11 +33,11 @@ const MainBanner = () => {
       <div className="container lg:max-w-[1241px] mb-10 lg:mb-20">
         <div className="my-10 lg:my-20 lg:m-0 col-span-1 lg:col-span-2">
           {loginType === DEFAULT && (
-            <div className="bg-white/20 lg:max-w-[560px] rounded-2xl p-10 flex flex-col items-center">
+            <div className="bg-white/20 lg:max-w-[560px] rounded-2xl p-5 lg:p-10 flex flex-col items-center">
               <h1 className="lg:text-[31px] gap-3 text-xl text-justify text-white font-bold lg:text-left uppercase mb-3">
                 Chào mừng bạn đến với
               </h1>
-              <h1 className=" uppercase text-[#89a4d5] text-5xl font-black text-justify mb-3">
+              <h1 className=" uppercase text-[#89a4d5] text-4xl lg:text-5xl font-black text-justify mb-3">
                 Giao thông <span className="text-[#da9956]">365</span>
               </h1>
               <h2 className="text-sm text-white text-center mb-8">
@@ -115,7 +115,7 @@ const MainBanner = () => {
                 </label>
 
                 {/* Submit Button */}
-                <button className="bg-[#da9956] block w-2/3 mx-auto text-white font-semibold text-lg uppercase py-2 px-10 transition-all hover:opacity-80">
+                <button className="bg-[#da9956] block lg:w-2/3 mx-auto text-white font-semibold text-lg uppercase py-2 px-10 transition-all hover:opacity-80">
                   Đăng ký hội viên
                 </button>
               </form>
@@ -123,10 +123,10 @@ const MainBanner = () => {
           )}
           {loginType === NO_VIOLATION && (
             <>
-              <h1 className="lg:text-[31px] gap-3 text-xl text-justify text-white font-bold lg:text-left uppercase mb-3">
+              <h1 className="lg:text-[31px] gap-3 text-xl text-center text-white font-bold lg:text-left uppercase mb-3">
                 Chào mừng bạn đến với
               </h1>
-              <h1 className=" uppercase text-[#89a4d5] text-5xl font-black text-justify mb-3">
+              <h1 className=" uppercase text-[#89a4d5] text-3xl lg:text-5xl font-black text-center mb-3">
                 Giao thông <span className="text-[#da9956]">365</span>
               </h1>
               <h2 className="text-base text-white text-center lg:text-left mb-5">
@@ -187,10 +187,10 @@ const MainBanner = () => {
           )}
           {loginType === HAS_VIOLATION && (
             <>
-              <h1 className="lg:text-[31px] gap-3 text-xl text-justify text-white font-bold lg:text-left uppercase mb-3">
+              <h1 className="lg:text-[31px] gap-3 text-xl text-center text-white font-bold lg:text-left uppercase mb-3">
                 Chào mừng bạn đến với
               </h1>
-              <h1 className=" uppercase text-[#89a4d5] text-5xl font-black text-justify mb-3">
+              <h1 className=" uppercase text-[#89a4d5] text-3xl lg:text-5xl font-black text-center mb-3">
                 Giao thông <span className="text-[#da9956]">365</span>
               </h1>
               <h2 className="text-base text-white text-center lg:text-left mb-5">
@@ -374,8 +374,8 @@ const NewsBlock = () => {
             Xem tất cả
           </button>
         </div>
-        <div className="grid grid-cols-5 gap-5">
-          <div className="col-span-3">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
+          <div className="lg:col-span-3">
             <div className="rounded-2xl shadow-md">
               <div>
                 <img
@@ -396,7 +396,7 @@ const NewsBlock = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-2 flex flex-col items-center gap-5">
+          <div className="lg:col-span-2 flex flex-col items-center gap-5">
             {news.map((item, index) => (
               <div
                 key={index}
