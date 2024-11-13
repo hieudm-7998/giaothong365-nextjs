@@ -30,7 +30,7 @@ const MainBanner = () => {
   const { toggleLoginType } = useLoginContext();
 
   return (
-    <div className="main-banner pt-5 pb-14 2xl:py-14">
+    <div className="main-banner pt-14 lg:pt-8 pb-14 2xl:py-14">
       <div className="container lg:max-w-[1241px] mb-10 lg:mb-20">
         <div className="my-10 lg:my-20 lg:m-0 col-span-1 lg:col-span-2">
           {loginType === DEFAULT && (
