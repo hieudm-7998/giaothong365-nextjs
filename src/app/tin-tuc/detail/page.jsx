@@ -1,4 +1,13 @@
-import { ChevronRight } from "lucide-react";
+"use client";
+
+import {
+  ChevronRight,
+  Eye,
+  MessageSquareText,
+  Share2,
+  ThumbsUp,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const news = [
   {
@@ -25,6 +34,8 @@ const news = [
 ];
 
 function NewsDetail() {
+  const router = useRouter();
+
   return (
     <div className="pt-20 lg:pt-28">
       <div className="container lg:max-w-[1241px] pb-10">
@@ -33,10 +44,41 @@ function NewsDetail() {
             <div className="rounded-2xl shadow-md">
               <div className="p-5">
                 <p className="text-[#898989] text-sm">{news[2].date}</p>
+                <div className="flex justify-between items-center py-1">
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1">
+                      <Eye className="text-[#898989] w-5" />
+                      <p className="text-[#898989] text-base">39</p>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Share2 className="text-[#898989] w-5" />
+                      <p className="text-[#898989] text-base">14</p>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <MessageSquareText className="text-[#898989] w-5" />
+                      <p className="text-[#898989] text-base">14</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      class="flex items-center justify-center gap-2 bg-[#3e59a5] text-white rounded py-1 px-2 hover:opacity-85 transition-all"
+                    >
+                      <ThumbsUp className="w-4" />
+                      <span>Thích</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="flex items-center justify-center gap-2 bg-[#3e59a5] text-white rounded py-1 px-2 hover:opacity-85 transition-all"
+                    >
+                      <Share2 className="w-4" />
+                      <span>Chia sẻ</span>
+                    </button>
+                  </div>
+                </div>
                 <h1 className="text-lg text-[#0d47a1] font-semibold mb-3">
                   {news[2].title}
                 </h1>
-
                 <div>
                   <img
                     src="/images/news-item.webp"
@@ -56,26 +98,43 @@ function NewsDetail() {
               {news.map((item, index) => (
                 <div
                   key={index}
-                  className="grid grid-cols-3 rounded-2xl shadow-md h-[164px]"
+                  className="grid grid-cols-3 rounded-2xl shadow-md h-[185px]"
                 >
                   <div className="col-span-1">
                     <div>
                       <img
                         src="/images/news-item.webp"
                         alt=""
-                        className="block h-[164px] rounded-l-2xl object-cover"
+                        className="block h-[185px] rounded-l-2xl object-cover"
                       />
                     </div>
                   </div>
                   <div className="col-span-2 p-3">
                     <p className="text-[#898989] text-xs">{item.date}</p>
-                    <h1 className="text-base text-[#0d47a1] font-semibold line-clamp-2 mb-1">
+                    <h1 className="text-base text-[#0d47a1] font-semibold line-clamp-2">
                       {item.title}
                     </h1>
+                    <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1">
+                        <Eye className="text-[#898989] w-3" />
+                        <p className="text-[#898989] text-xs">39</p>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Share2 className="text-[#898989] w-3" />
+                        <p className="text-[#898989] text-xs">14</p>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <MessageSquareText className="text-[#898989] w-3" />
+                        <p className="text-[#898989] text-xs">14</p>
+                      </div>
+                    </div>
                     <p className="line-clamp-3 mb-2 text-xs">
                       {item.description}
                     </p>
-                    <button className="flex items-center text-xs text-[#0f8dd4]">
+                    <button
+                      className="flex items-center text-xs text-[#0f8dd4]"
+                      onClick={() => router.push("/tin-tuc/detail")}
+                    >
                       Xem thêm <ChevronRight className="h-4" />
                     </button>
                   </div>
@@ -83,6 +142,31 @@ function NewsDetail() {
               ))}
             </div>
           </div>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+          <div className="row cmt col-span-3 lg:col-span-2 rounded-2xl shadow-md !bg-white p-">
+            <h4 className="!text-[#0d47a1]">Bình luận:</h4>
+            <div>
+              <div>
+                <h5 className="!text-[#0d47a1]">0xxxxxxxxxx :</h5>
+                <p>Bài viết rất hay!</p>
+              </div>
+              <div>
+                <h5 className="!text-[#0d47a1]">0xxxxxxxxxx :</h5>
+                <p>Bài viết rất bổ ích !</p>
+              </div>
+            </div>
+            <div>
+              <textarea
+                type="text"
+                className="block w-full rounded-lg border-solid border-gray-300 border-[1px] p-2 mb-3"
+              />
+              <button className="bg-[#da9956] mx-auto text-white font-semibold text-lg uppercase py-2 px-10 transition-all hover:opacity-80">
+                Gửi bình luận
+              </button>
+            </div>
+          </div>
+          <div></div>
         </div>
       </div>
     </div>

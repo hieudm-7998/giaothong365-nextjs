@@ -35,7 +35,7 @@ const MainBanner = () => {
         <div className="my-10 lg:my-20 lg:m-0 col-span-1 lg:col-span-2">
           {loginType === DEFAULT && (
             <div className="bg-white/20 lg:max-w-[560px] rounded-2xl p-3 2xl:p-10 flex flex-col items-center">
-              <h1 className="2xl:text-[31px] gap-3 text-xl text-justify text-white font-bold lg:text-left uppercase">
+              <h1 className="2xl:text-[31px] gap-3 text-xl text-justify text-white font-bold lg:text-left uppercase 2xl:mb-2">
                 Chào mừng bạn đến với
               </h1>
               <h1 className="uppercase text-[#89a4d5] text-3xl 2xl:text-5xl font-black text-justify mb-2">

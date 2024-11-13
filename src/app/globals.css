@@ -76,3 +76,39 @@ select {
   opacity: 0.5; /* Adjust opacity here */
   z-index: -1; /* Ensure it stays behind content */
 }
+
+
+.row.cmt {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.cmt h4 {
+	color: #2d58d3;
+	font-weight: bold;
+	border-bottom: solid 2px #0d47a1;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+}
+
+.cmt h5 {
+	font-weight: bold;
+	color: #376aff;
+}
+
+.cmt p {
+	border-bottom: solid 2px #e4e4e4;
+	margin-bottom: 15px;
+}
+
+.cmt {
+	margin-bottom: 15px;
+	background-color: rgba(239,239,239,.8);
+	padding-bottom: 15px;
+	padding-top: 15px;
+	margin-top: 15px;
+}
+
+.cmt input {
+	width: 100%;
+}
