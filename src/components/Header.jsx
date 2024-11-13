@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   DEFAULT,
   HAS_VIOLATION,
@@ -44,15 +44,34 @@ const DesktopHeader = () => {
   const router = useRouter();
   const { loginType } = useLoginContext();
   const isHome = useIsHome();
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setIsScrolling(false);
+      } else if (window.scrollY > 300) {
+        setIsScrolling(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className={`absolute w-full top-0 ${isHome ? "" : "bg-white"}`}>
+    <div
+      className={`fixed w-full top-0 transition-all ${
+        isHome && !isScrolling ? "" : "bg-white"
+      } z-20`}
+    >
       <div className="container lg:max-w-[1241px] py-7">
         <div className="flex justify-between items-center">
           <div>
             <Link href="/" className="text-base">
               <img
-                src={`/images/${isHome ? "logo" : "logo-black"}.png`}
+                src={`/images/${
+                  isHome && !isScrolling ? "logo" : "logo-black"
+                }.png`}
                 alt=""
                 className="max-w-[250px]"
               />
@@ -64,7 +83,7 @@ const DesktopHeader = () => {
                 <Link
                   href="/"
                   className={`text-base hover:opacity-85 transition-all uppercase ${
-                    isHome ? "text-white" : "text-[#0d47a1]"
+                    isHome && !isScrolling ? "text-white" : "text-[#0d47a1]"
                   } ${pathname === "/" && "font-semibold"}`}
                 >
                   Trang chủ
@@ -72,7 +91,7 @@ const DesktopHeader = () => {
                 <Link
                   href="/tra-cuu-phat-nguoi"
                   className={`text-base hover:opacity-85 transition-all uppercase ${
-                    isHome ? "text-white" : "text-[#0d47a1]"
+                    isHome && !isScrolling ? "text-white" : "text-[#0d47a1]"
                   } ${pathname === "/tra-cuu-phat-nguoi" && "font-semibold"}`}
                 >
                   Tra cứu phạt nguội
@@ -80,7 +99,7 @@ const DesktopHeader = () => {
                 <Link
                   href="/tra-cuu-diem-phat-nguoi"
                   className={`text-base hover:opacity-85 transition-all uppercase ${
-                    isHome ? "text-white" : "text-[#0d47a1]"
+                    isHome && !isScrolling ? "text-white" : "text-[#0d47a1]"
                   } ${
                     pathname === "/tra-cuu-diem-phat-nguoi" && "font-semibold"
                   }`}
@@ -90,7 +109,7 @@ const DesktopHeader = () => {
                 <Link
                   href="/tin-tuc"
                   className={`text-base hover:opacity-85 transition-all uppercase ${
-                    isHome ? "text-white" : "text-[#0d47a1]"
+                    isHome && !isScrolling ? "text-white" : "text-[#0d47a1]"
                   } ${pathname === "/tin-tuc" && "font-semibold"}`}
                 >
                   Tin tức
@@ -100,7 +119,11 @@ const DesktopHeader = () => {
               {loginType === DEFAULT && (
                 <div className="flex justify-end gap-2">
                   <LoginDialog />
-                  <span className={isHome ? "text-white" : "text-[#0d47a1]"}>
+                  <span
+                    className={
+                      isHome && !isScrolling ? "text-white" : "text-[#0d47a1]"
+                    }
+                  >
                     |
                   </span>
                   <RegisterDialog />
@@ -163,18 +186,18 @@ const DesktopHeader = () => {
                     <DropdownMenu.Item
                       color="red"
                       className="hover:cursor-pointer"
+                      onClick={() => router.push("/tra-cuu-phat-nguoi")}
                     >
                       <AlertCircle className="w-5" />
                       Thông báo: Có 01 lỗi vi phạm !
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator />
-                    <DropdownMenu.Item className="hover:cursor-pointer">
-                      <User className="w-5" />
-                      Tài khoản
-                    </DropdownMenu.Item>
-                    <DropdownMenu.Item className="hover:cursor-pointer">
+                    <DropdownMenu.Item
+                      className="hover:cursor-pointer"
+                      onClick={() => router.push("/tai-khoan")}
+                    >
                       <Settings className="w-5" />
-                      Cài đặt
+                      Cài đặt tài khoản
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator />
                     <DropdownMenu.Item className="hover:cursor-pointer">
@@ -235,13 +258,12 @@ const DesktopHeader = () => {
                     </Button>
                   </DropdownMenu.Trigger>
                   <DropdownMenu.Content align="end">
-                    <DropdownMenu.Item className="hover:cursor-pointer">
-                      <User className="w-5" />
-                      Tài khoản
-                    </DropdownMenu.Item>
-                    <DropdownMenu.Item className="hover:cursor-pointer">
+                    <DropdownMenu.Item
+                      className="hover:cursor-pointer"
+                      onClick={() => router.push("/tai-khoan")}
+                    >
                       <Settings className="w-5" />
-                      Cài đặt
+                      Cài đặt tài khoản
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator />
                     <DropdownMenu.Item className="hover:cursor-pointer">
@@ -265,11 +287,26 @@ const MobileHeader = () => {
   const pathname = usePathname();
   const router = useRouter();
   const { loginType } = useLoginContext();
-  const isHome = useIsHome()
-  
+  const isHome = useIsHome();
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setIsScrolling(false);
+      } else if (window.scrollY > 20) {
+        setIsScrolling(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div
-      className={`absolute w-screen top-0 ${isShow && isHome ? "bg-white" : "bg-transparent"} `}
+      className={`fixed w-screen transition-all top-0 z-30 ${
+        (isShow && isHome) || isScrolling ? "bg-white" : "bg-transparent"
+      } `}
     >
       <div className="py-5 relative">
         <div className="container">
@@ -277,7 +314,9 @@ const MobileHeader = () => {
             <div>
               <Link href="/" className="text-base text-white">
                 <img
-                  src={`/images/${isShow && isHome ? "logo-black" : "logo"}.png`}
+                  src={`/images/${
+                    (isShow && isHome) || isScrolling ? "logo-black" : "logo"
+                  }.png`}
                   alt=""
                   className="max-w-[200px]"
                 />
@@ -333,7 +372,10 @@ const MobileHeader = () => {
                     </Button>
                   </DropdownMenu.Trigger>
                   <DropdownMenu.Content align="end">
-                    <DropdownMenu.Item className="hover:cursor-pointer">
+                    <DropdownMenu.Item
+                      className="hover:cursor-pointer"
+                      onClick={() => router.push("/tai-khoan")}
+                    >
                       <User className="w-5" />
                       Tài khoản
                     </DropdownMenu.Item>
@@ -409,13 +451,12 @@ const MobileHeader = () => {
                       Thông báo: Có 01 lỗi vi phạm !
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator />
-                    <DropdownMenu.Item className="hover:cursor-pointer">
-                      <User className="w-5" />
-                      Tài khoản
-                    </DropdownMenu.Item>
-                    <DropdownMenu.Item className="hover:cursor-pointer">
+                    <DropdownMenu.Item
+                      className="hover:cursor-pointer"
+                      onClick={() => router.push("/tai-khoan")}
+                    >
                       <Settings className="w-5" />
-                      Cài đặt
+                      Cài đặt tài khoản
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator />
                     <DropdownMenu.Item className="hover:cursor-pointer">
@@ -432,7 +473,11 @@ const MobileHeader = () => {
                 {isShow ? (
                   <X className="text-[#285398]" />
                 ) : (
-                  <Menu className="text-white" />
+                  <Menu
+                    className={`${
+                      isScrolling ? "text-[#285398]" : "text-white"
+                    }`}
+                  />
                 )}
               </IconButton>
             </div>
@@ -497,12 +542,27 @@ const MobileHeader = () => {
 
 const RegisterDialog = () => {
   const isHome = useIsHome();
+
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setIsScrolling(false);
+      } else if (window.scrollY > 300) {
+        setIsScrolling(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <Dialog.Root>
       <Dialog.Trigger>
         <button
           className={`transition-all hover:opacity-85 text-sm ${
-            isHome ? "text-white" : "text-[#0d47a1]"
+            isHome && !isScrolling ? "text-white" : "text-[#0d47a1]"
           }`}
         >
           Đăng ký
@@ -589,12 +649,27 @@ const RegisterDialog = () => {
 
 const LoginDialog = () => {
   const isHome = useIsHome();
+
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setIsScrolling(false);
+      } else if (window.scrollY > 300) {
+        setIsScrolling(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <Dialog.Root>
       <Dialog.Trigger>
         <button
           className={`transition-all hover:opacity-85 text-sm ${
-            isHome ? "text-white" : "text-[#0d47a1]"
+            isHome && !isScrolling ? "text-white" : "text-[#0d47a1]"
           }`}
         >
           Đăng nhập
@@ -645,9 +720,7 @@ const MobileLoginDialog = () => {
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <button
-          className="transition-all font-medium hover:opacity-85 text-sm text-[#0d47a1]"
-        >
+        <button className="transition-all font-medium hover:opacity-85 text-sm text-[#0d47a1]">
           Đăng nhập
         </button>
       </Dialog.Trigger>
@@ -695,9 +768,7 @@ const MobileRegisterDialog = () => {
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <button
-          className="transition-all font-medium hover:opacity-85 text-sm text-[#0d47a1]"
-        >
+        <button className="transition-all font-medium hover:opacity-85 text-sm text-[#0d47a1]">
           Đăng ký
         </button>
       </Dialog.Trigger>

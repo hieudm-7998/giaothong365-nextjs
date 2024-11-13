@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   DEFAULT,
   HAS_VIOLATION,
@@ -41,7 +41,7 @@ const DesktopHeader = () => {
   const isHome = useIsHome();
 
   return (
-    <div className={`absolute w-full top-0 bg-white shadow-md`}>
+    <div className={`fixed w-full top-0 bg-white shadow-md`}>
       <div className="container lg:max-w-[1241px] py-7">
         <div className="flex justify-between items-center">
           <div>
@@ -164,12 +164,8 @@ const DesktopHeader = () => {
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator />
                     <DropdownMenu.Item className="hover:cursor-pointer">
-                      <User className="w-5" />
-                      Tài khoản
-                    </DropdownMenu.Item>
-                    <DropdownMenu.Item className="hover:cursor-pointer">
                       <Settings className="w-5" />
-                      Cài đặt
+                      Cài đặt tài khoản
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator />
                     <DropdownMenu.Item className="hover:cursor-pointer">
@@ -231,12 +227,8 @@ const DesktopHeader = () => {
                   </DropdownMenu.Trigger>
                   <DropdownMenu.Content align="end">
                     <DropdownMenu.Item className="hover:cursor-pointer">
-                      <User className="w-5" />
-                      Tài khoản
-                    </DropdownMenu.Item>
-                    <DropdownMenu.Item className="hover:cursor-pointer">
                       <Settings className="w-5" />
-                      Cài đặt
+                      Cài đặt tài khoản
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator />
                     <DropdownMenu.Item className="hover:cursor-pointer">
@@ -261,10 +253,26 @@ const MobileHeader = () => {
   const router = useRouter();
   const { loginType } = useLoginContext();
   const isHome = useIsHome()
+
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setIsScrolling(false);
+      } else if (window.scrollY > 20) {
+        setIsScrolling(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   
   return (
     <div
-      className={`absolute w-screen top-0 bg-white`}
+      className={`fixed w-screen transition-all top-0 z-30 ${
+        (isShow && isHome) || isScrolling ? "bg-white" : "bg-transparent"
+      } `}
     >
       <div className="py-5 relative">
         <div className="container">

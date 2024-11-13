@@ -107,7 +107,7 @@ const MainBanner = () => {
                 {/* Terms and Conditions */}
                 <label className="flex items-center space-x-2 justify-center">
                   <input type="checkbox" className="form-checkbox" />
-                  <span className="text-white">
+                  <span className="text-white text-sm py-2 lg:py-1 2xl:py-2">
                     Tôi đồng ý với{" "}
                     <span className="text-[#759cff] cursor-pointer">
                       điều khoản chính sách
@@ -369,12 +369,12 @@ export const NewsBlock = ({ title }) => {
   return (
     <div className="news-bg py-10">
       <div className="container lg:max-w-[1024px]">
-        <div className="flex justify-between items-center mb-5">
-          <h1 className="text-3xl text-[#0d47a1] font-semibold uppercase">
+        <div className="flex justify-between items-end mb-5">
+          <h1 className="text-center text-3xl font-bold text-[#0d47a1] uppercase">
             {title}
           </h1>
           <button
-            className="text-[#3c73a7] text-xl font-semibold"
+            className="text-[#3c73a7] font-semibold"
             onClick={() => router.push("/tin-tuc")}
           >
             Xem tất cả
@@ -476,7 +476,7 @@ const Benefit = () => {
   const isDesktop = useMediaQuery("(min-width: 960px)");
 
   return (
-    <div className="benefit-bg py-20">
+    <div className="benefit-bg pt-20 pb-16">
       <div className="container lg:max-w-[1241px] mb-10 lg:mb-10">
         <h1 className="text-center text-3xl font-bold mb-10 text-[#0d47a1] uppercase">
           Quyền lợi hội viên

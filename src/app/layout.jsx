@@ -6,6 +6,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { LoginProvider } from "@/context/LoginContext";
 import { IsHomeProvider } from "@/context/HeaderContext";
+import Chatbot from "@/components/Chatbot";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const montserratFont = Montserrat({
   subsets: ["vietnamese"],
@@ -30,6 +32,8 @@ export default function RootLayout({ children }) {
               <Header />
               {children}
               <Footer />
+              <ScrollToTop />
+              <Chatbot />
             </IsHomeProvider>
           </LoginProvider>
         </Theme>

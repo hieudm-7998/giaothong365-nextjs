@@ -88,24 +88,19 @@ const ViolationResult = () => {
                   </div>
                 </div>
               </div>
-              
-              <p className="text-center text-[#24ff00]">
-                    Không phát hiện lỗi vi phạm
-                  </p>
-                  <p className="text-center text-black mb-10">
-                    Mong bạn tiếp tục tuân thủ luật giao thông
-                    <br />
-                    và lái xe an toàn!
-                  </p>
             </div>
+
+            <p className="text-center text-[#24ff00]">
+              Không phát hiện lỗi vi phạm
+            </p>
+            <p className="text-center text-black mb-10">
+              Mong bạn tiếp tục tuân thủ luật giao thông và lái xe an toàn!
+            </p>
+
+            
+            <div className="lg:w-[912px] border-solid border-l-0 border-t-0 border-r-0 border-b-[1px] border-[#b7c8fd] mt-2 mx-auto mb-5"></div>
             <div>
-              <h1 className="text-center text-lg uppercase font-semibold">
-                Mời khách hàng nhập thông tin BKS cho mỗi lần tra cứu
-              </h1>
-              <p className="text-center mb-5">
-                Nhập thông tin vào những ô dưới để tra cứu nhé bạn!
-              </p>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10 mb-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10 mb-5">
                 <div className="flex flex-col justify-center gap-2">
                   <p>Biển số xe:</p>
                   <label>
@@ -137,6 +132,10 @@ const ViolationResult = () => {
                 Tra cứu
               </button>
             </div>
+            <h1 className="text-center font-normal italic mt-10 text-[#0d47a1]">
+              Trích nguồn dữ liệu: Cổng thông tin điện tử Cục Cảnh sát giao
+              thông và Cục Đăng kiểm Việt Nam
+            </h1>
           </>
         )}
         {loginType === HAS_VIOLATION && (

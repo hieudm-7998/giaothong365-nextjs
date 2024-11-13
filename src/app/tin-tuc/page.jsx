@@ -32,7 +32,7 @@ const news = [
 function TinTuc() {
   return (
     <>
-      <div className="pt-20 lg:pt-[105px]">
+      <div className="pt-20 lg:pt-[97px]">
         <Swiper spaceBetween={50} autoplay slidesPerView={1}>
           <SwiperSlide>
             <img src="/images/tin-tuc-1.png" alt="" className="block mx-auto" />
