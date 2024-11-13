@@ -10,7 +10,7 @@ import {
   NO_VIOLATION,
   useLoginContext,
 } from "@/context/LoginContext";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Eye, MessageSquareText, Share2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -386,17 +386,34 @@ export const NewsBlock = ({ title }) => {
               <div>
                 <img
                   src="/images/news-item.webp"
-                  className="block w-full h-[283px] rounded-t-2xl object-cover"
+                  className="block w-full h-[323px] rounded-t-2xl object-cover"
                   alt=""
                 />
               </div>
               <div className="p-5">
                 <p className="text-[#898989] text-sm">{news[0].date}</p>
-                <h1 className="text-lg text-[#0d47a1] font-semibold line-clamp-2 mb-1">
+                <h1 className="text-lg text-[#0d47a1] font-semibold line-clamp-2">
                   {news[0].title}
                 </h1>
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="flex items-center gap-1">
+                    <Eye className="text-[#898989] w-5" />
+                    <p className="text-[#898989]">39</p>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Share2 className="text-[#898989] w-5" />
+                    <p className="text-[#898989]">14</p>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <MessageSquareText className="text-[#898989] w-5" />
+                    <p className="text-[#898989]">14</p>
+                  </div>
+                </div>
                 <p className="line-clamp-4 mb-2">{news[0].description}</p>
-                <button className="flex items-center text-[#0f8dd4]">
+                <button
+                  className="flex items-center text-[#0f8dd4]"
+                  onClick={() => router.push("/tin-tuc/detail")}
+                >
                   Xem thêm <ChevronRight className="h-4" />
                 </button>
               </div>
@@ -406,26 +423,43 @@ export const NewsBlock = ({ title }) => {
             {news.map((item, index) => (
               <div
                 key={index}
-                className="grid grid-cols-3 rounded-2xl shadow-md h-[164px]"
+                className="grid grid-cols-3 rounded-2xl shadow-md h-[185px]"
               >
                 <div className="col-span-1">
                   <div>
                     <img
                       src="/images/news-item.webp"
                       alt=""
-                      className="block h-[164px] rounded-l-2xl object-cover"
+                      className="block h-[185px] rounded-l-2xl object-cover"
                     />
                   </div>
                 </div>
                 <div className="col-span-2 p-3">
                   <p className="text-[#898989] text-xs">{item.date}</p>
-                  <h1 className="text-base text-[#0d47a1] font-semibold line-clamp-2 mb-1">
+                  <h1 className="text-base text-[#0d47a1] font-semibold line-clamp-2">
                     {item.title}
                   </h1>
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1">
+                      <Eye className="text-[#898989] w-3" />
+                      <p className="text-[#898989] text-xs">39</p>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Share2 className="text-[#898989] w-3" />
+                      <p className="text-[#898989] text-xs">14</p>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <MessageSquareText className="text-[#898989] w-3" />
+                      <p className="text-[#898989] text-xs">14</p>
+                    </div>
+                  </div>
                   <p className="line-clamp-3 mb-2 text-xs">
                     {item.description}
                   </p>
-                  <button className="flex items-center text-xs text-[#0f8dd4]">
+                  <button
+                    className="flex items-center text-xs text-[#0f8dd4]"
+                    onClick={() => router.push("/tin-tuc/detail")}
+                  >
                     Xem thêm <ChevronRight className="h-4" />
                   </button>
                 </div>
