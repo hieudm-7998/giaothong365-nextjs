@@ -88,16 +88,55 @@ const ViolationResult = () => {
                   </div>
                 </div>
               </div>
+              
+              <p className="text-center text-[#24ff00]">
+                    Không phát hiện lỗi vi phạm
+                  </p>
+                  <p className="text-center text-black mb-10">
+                    Mong bạn tiếp tục tuân thủ luật giao thông
+                    <br />
+                    và lái xe an toàn!
+                  </p>
             </div>
-            <h1 className="text-2xl font-bold text-red-600 text-center py-10">
-              Bạn đang có 2 thông báo vi phạm
-            </h1>
-            <ViolationTable />
-            <ViolationTable2 />
-            <h1 className="text-center font-normal italic mt-10 text-[#0d47a1]">
-              Trích nguồn dữ liệu: Cổng thông tin điện tử Cục Cảnh sát giao
-              thông và Cục Đăng kiểm Việt Nam
-            </h1>
+            <div>
+              <h1 className="text-center text-lg uppercase font-semibold">
+                Mời khách hàng nhập thông tin BKS cho mỗi lần tra cứu
+              </h1>
+              <p className="text-center mb-5">
+                Nhập thông tin vào những ô dưới để tra cứu nhé bạn!
+              </p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10 mb-10">
+                <div className="flex flex-col justify-center gap-2">
+                  <p>Biển số xe:</p>
+                  <label>
+                    <input
+                      type="text"
+                      placeholder="VD: 30K12363"
+                      className="w-full px-4 py-3 bg-white rounded-md transition-all border-solid border-gray-200 border-[1px]"
+                    />
+                  </label>
+                </div>
+                <div className="flex flex-col justify-center gap-2">
+                  <p>Loại phương tiện:</p>
+                  <label>
+                    <select
+                      className="w-full px-4 py-3 bg-white rounded-md transition-all border-solid border-gray-200 border-[1px]"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>
+                        Chọn loại phương tiện
+                      </option>
+                      <option value="car">Ô tô</option>
+                      <option value="motorbike">Xe máy</option>
+                      <option value="bicycle">Xe đạp</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <button className="bg-[#da9956] block lg:w-1/3 mx-auto text-white font-semibold text-lg py-2 px-10 transition-all hover:opacity-80">
+                Tra cứu
+              </button>
+            </div>
           </>
         )}
         {loginType === HAS_VIOLATION && (
