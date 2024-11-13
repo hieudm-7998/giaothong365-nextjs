@@ -54,7 +54,7 @@ const DesktopHeader = () => {
               <img
                 src={`/images/${isHome ? "logo" : "logo-black"}.png`}
                 alt=""
-                className="max-w-[350px]"
+                className="max-w-[250px]"
               />
             </Link>
           </div>

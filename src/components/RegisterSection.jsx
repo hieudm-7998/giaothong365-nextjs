@@ -9,16 +9,18 @@ function RegisterSection() {
             </h1>
             <p className="text-white">
               Đăng ký hội viên ngay bây giờ để nhận thông báo phạt nguội kịp
-              thời <br/>và hướng dẫn cách giải quyết đơn giản nhất.
+              thời <br />
+              và hướng dẫn cách giải quyết đơn giản nhất.
             </p>
           </div>
           <div>
             <form className="flex flex-col space-y-4 mx-auto">
+              {/* Full Name */}
               <label>
                 <input
                   type="text"
                   placeholder="Họ và tên"
-                  className="w-full px-4 py-3 border-solid border-[#0D47A1] focus:bg-blue-100 rounded-md shadow-sm transition-all"
+                  className="w-full px-4 py-3 bg-white rounded-md shadow-sm transition-all"
                 />
               </label>
 
@@ -27,7 +29,7 @@ function RegisterSection() {
                 <input
                   type="text"
                   placeholder="Số điện thoại"
-                  className="w-full px-4 py-3 border-solid border-[#0D47A1] focus:bg-blue-100 rounded-md shadow-sm transition-all"
+                  className="w-full px-4 py-3 bg-white rounded-md shadow-sm transition-all"
                 />
               </label>
 
@@ -36,12 +38,54 @@ function RegisterSection() {
                 <input
                   type="text"
                   placeholder="Biển kiểm soát"
-                  className="w-full px-4 py-3 border-solid border-[#0D47A1] focus:bg-blue-100 rounded-md shadow-sm transition-all mb-10"
+                  className="w-full px-4 py-3 bg-white rounded-md shadow-sm transition-all"
                 />
               </label>
 
+              {/* Vehicle Type */}
+              <label>
+                <select
+                  className="w-full px-4 py-3 bg-white rounded-md shadow-sm transition-all"
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Chọn loại phương tiện
+                  </option>
+                  <option value="car">Ô tô</option>
+                  <option value="motorbike">Xe máy</option>
+                  <option value="bicycle">Xe đạp</option>
+                </select>
+              </label>
+
+              <label>
+                <input
+                  type="password"
+                  placeholder="Mật khẩu"
+                  className="w-full px-4 py-3 bg-white rounded-md shadow-sm transition-all"
+                />
+              </label>
+
+              <label>
+                <input
+                  type="password"
+                  placeholder="Nhập lại mật khẩu"
+                  className="w-full px-4 py-3 bg-white rounded-md shadow-sm transition-all"
+                />
+              </label>
+
+              {/* Terms and Conditions */}
+              <label className="flex items-center space-x-2 justify-center">
+                <input type="checkbox" className="form-checkbox" />
+                <span className="text-white">
+                  Tôi đồng ý với{" "}
+                  <span className="text-[#759cff] cursor-pointer">
+                    điều khoản chính sách
+                  </span>
+                </span>
+              </label>
+
               {/* Submit Button */}
-              <button className="w-full py-3 bg-[#EB5325] transition-all text-white font-semibold rounded-md hover:opacity-80 focus:outline-none">
+              <button className="bg-[#da9956] block lg:w-2/3 mx-auto text-white font-semibold text-lg uppercase py-2 px-10 transition-all hover:opacity-80">
                 Đăng ký hội viên
               </button>
             </form>
