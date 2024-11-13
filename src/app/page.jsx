@@ -34,16 +34,16 @@ const MainBanner = () => {
       <div className="container lg:max-w-[1241px] mb-10 lg:mb-20">
         <div className="my-10 lg:my-20 lg:m-0 col-span-1 lg:col-span-2">
           {loginType === DEFAULT && (
-            <div className="bg-white/20 lg:max-w-[560px] rounded-2xl p-3 2xl:p-10 flex flex-col items-center">
+            <div className="bg-white/20 lg:max-w-[480px] 2xl:max-w-[560px] rounded-2xl p-3 2xl:p-10 flex flex-col items-center">
               <h1 className="2xl:text-[31px] gap-3 text-xl text-justify text-white font-bold lg:text-left uppercase 2xl:mb-2">
                 Chào mừng bạn đến với
               </h1>
               <h1 className="uppercase text-[#89a4d5] text-3xl 2xl:text-5xl font-black text-justify mb-2">
                 Giao thông <span className="text-[#da9956]">365</span>
               </h1>
-              <h2 className="text-sm text-white text-center mb-3">
-                Chỉ cần nhập thông tin cơ bản, Giao thông 365 sẽ giúp bạn theo
-                dõi và xử lý vi phạm giao thông một cách dễ dàng, tiện lợi!
+              <h2 className="text-sm text-white text-center mb-3 lg:px-8 2xl:p-0 2xl:gap-4">
+                Hãy nhập thông tin cơ bản, Giao thông 365 sẽ giúp bạn theo dõi
+                và xử lý vi phạm giao thông một cách dễ dàng!
               </h2>
               <form className="flex flex-col px-8 2xl:p-0 gap-1 2xl:gap-4 mx-auto w-full">
                 {/* Full Name */}
@@ -51,7 +51,7 @@ const MainBanner = () => {
                   <input
                     type="text"
                     placeholder="Họ và tên"
-                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all"
+                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all opacity-70"
                   />
                 </label>
 
@@ -60,7 +60,7 @@ const MainBanner = () => {
                   <input
                     type="text"
                     placeholder="Số điện thoại"
-                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all"
+                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all opacity-70"
                   />
                 </label>
 
@@ -69,14 +69,14 @@ const MainBanner = () => {
                   <input
                     type="text"
                     placeholder="Biển kiểm soát"
-                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all"
+                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all opacity-70"
                   />
                 </label>
 
                 {/* Vehicle Type */}
                 <label>
                   <select
-                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all"
+                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all opacity-70"
                     defaultValue=""
                   >
                     <option value="" disabled>
@@ -92,7 +92,7 @@ const MainBanner = () => {
                   <input
                     type="password"
                     placeholder="Mật khẩu"
-                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all"
+                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all opacity-70"
                   />
                 </label>
 
@@ -100,7 +100,7 @@ const MainBanner = () => {
                   <input
                     type="password"
                     placeholder="Nhập lại mật khẩu"
-                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all"
+                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all opacity-70"
                   />
                 </label>
 
@@ -339,7 +339,7 @@ const MainBanner = () => {
 //   );
 // };
 
-export const NewsBlock = ({title}) => {
+export const NewsBlock = ({ title }) => {
   const news = [
     {
       date: "19/09/2024",
@@ -364,7 +364,7 @@ export const NewsBlock = ({title}) => {
     },
   ];
 
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div className="news-bg py-10">
@@ -373,7 +373,10 @@ export const NewsBlock = ({title}) => {
           <h1 className="text-3xl text-[#0d47a1] font-semibold uppercase">
             {title}
           </h1>
-          <button className="text-[#3c73a7] text-xl font-semibold" onClick={() => router.push('/tin-tuc')}>
+          <button
+            className="text-[#3c73a7] text-xl font-semibold"
+            onClick={() => router.push("/tin-tuc")}
+          >
             Xem tất cả
           </button>
         </div>
