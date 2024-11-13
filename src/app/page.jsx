@@ -51,7 +51,7 @@ const MainBanner = () => {
                   <input
                     type="text"
                     placeholder="Họ và tên"
-                    className="w-full px-4 2xl:py-3 py-1 bg-white rounded-md shadow-sm transition-all"
+                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all"
                   />
                 </label>
 
@@ -60,7 +60,7 @@ const MainBanner = () => {
                   <input
                     type="text"
                     placeholder="Số điện thoại"
-                    className="w-full px-4 2xl:py-3 py-1 bg-white rounded-md shadow-sm transition-all"
+                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all"
                   />
                 </label>
 
@@ -69,14 +69,14 @@ const MainBanner = () => {
                   <input
                     type="text"
                     placeholder="Biển kiểm soát"
-                    className="w-full px-4 2xl:py-3 py-1 bg-white rounded-md shadow-sm transition-all"
+                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all"
                   />
                 </label>
 
                 {/* Vehicle Type */}
                 <label>
                   <select
-                    className="w-full px-4 2xl:py-3 py-1 bg-white rounded-md shadow-sm transition-all"
+                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all"
                     defaultValue=""
                   >
                     <option value="" disabled>
@@ -92,7 +92,7 @@ const MainBanner = () => {
                   <input
                     type="password"
                     placeholder="Mật khẩu"
-                    className="w-full px-4 2xl:py-3 py-1 bg-white rounded-md shadow-sm transition-all"
+                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all"
                   />
                 </label>
 
@@ -100,7 +100,7 @@ const MainBanner = () => {
                   <input
                     type="password"
                     placeholder="Nhập lại mật khẩu"
-                    className="w-full px-4 2xl:py-3 py-1 bg-white rounded-md shadow-sm transition-all"
+                    className="w-full px-4 2xl:py-3 py-2 bg-white rounded-md shadow-sm transition-all"
                   />
                 </label>
 
