@@ -41,7 +41,7 @@ const DesktopHeader = () => {
   const isHome = useIsHome();
 
   return (
-    <div className={`absolute w-full top-0 bg-white`}>
+    <div className={`absolute w-full top-0 bg-white shadow-md`}>
       <div className="container lg:max-w-[1241px] py-7">
         <div className="flex justify-between items-center">
           <div>

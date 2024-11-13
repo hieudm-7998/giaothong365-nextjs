@@ -37,7 +37,7 @@ function NewsDetail() {
   const router = useRouter();
 
   return (
-    <div className="pt-20 lg:pt-28">
+    <div className="pt-20 lg:pt-32">
       <div className="container lg:max-w-[1241px] pb-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           <div className="col-span-3 lg:col-span-2">
@@ -62,14 +62,14 @@ function NewsDetail() {
                   <div className="flex items-center gap-2">
                     <button
                       type="button"
-                      class="flex items-center justify-center gap-2 bg-[#3e59a5] text-white rounded py-1 px-2 hover:opacity-85 transition-all"
+                      className="flex items-center justify-center gap-2 bg-[#3e59a5] text-white rounded py-1 px-2 hover:opacity-85 transition-all"
                     >
                       <ThumbsUp className="w-4" />
                       <span>Thích</span>
                     </button>
                     <button
                       type="button"
-                      class="flex items-center justify-center gap-2 bg-[#3e59a5] text-white rounded py-1 px-2 hover:opacity-85 transition-all"
+                      className="flex items-center justify-center gap-2 bg-[#3e59a5] text-white rounded py-1 px-2 hover:opacity-85 transition-all"
                     >
                       <Share2 className="w-4" />
                       <span>Chia sẻ</span>
