@@ -10,14 +10,7 @@ import {
   Text,
   TextField,
 } from "@radix-ui/themes";
-import {
-  AlertCircle,
-  LogOut,
-  Menu,
-  Settings,
-  User,
-  X,
-} from "lucide-react";
+import { AlertCircle, LogOut, Menu, Settings, User, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -252,7 +245,7 @@ const MobileHeader = () => {
   const pathname = usePathname();
   const router = useRouter();
   const { loginType } = useLoginContext();
-  const isHome = useIsHome()
+  const isHome = useIsHome();
 
   const [isScrolling, setIsScrolling] = useState(false);
 
@@ -267,7 +260,7 @@ const MobileHeader = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
+
   return (
     <div
       className={`fixed w-screen transition-all top-0 z-30 ${
@@ -569,7 +562,15 @@ const RegisterDialog = () => {
           </label>
           <label className="flex items-center space-x-2">
             <input type="checkbox" className="form-checkbox" />
-            <span>Tôi đồng ý với Điều khoản chính sách</span>
+            <span>
+              Tôi đồng ý với
+              <Link
+                href="/dieu-khoan-su-dung"
+                className="text-[#759cff] cursor-pointer ml-1"
+              >
+                điều khoản chính sách
+              </Link>
+            </span>
           </label>
         </Flex>
 
@@ -648,9 +649,7 @@ const MobileLoginDialog = () => {
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <button
-          className="transition-all font-medium hover:opacity-85 text-sm text-[#0d47a1]"
-        >
+        <button className="transition-all font-medium hover:opacity-85 text-sm text-[#0d47a1]">
           Đăng nhập
         </button>
       </Dialog.Trigger>
@@ -698,9 +697,7 @@ const MobileRegisterDialog = () => {
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <button
-          className="transition-all font-medium hover:opacity-85 text-sm text-[#0d47a1]"
-        >
+        <button className="transition-all font-medium hover:opacity-85 text-sm text-[#0d47a1]">
           Đăng ký
         </button>
       </Dialog.Trigger>
@@ -762,7 +759,15 @@ const MobileRegisterDialog = () => {
           </label>
           <label className="flex items-center space-x-2">
             <input type="checkbox" className="form-checkbox" />
-            <span>Tôi đồng ý với Điều khoản chính sách</span>
+            <span>
+              Tôi đồng ý với
+              <Link
+                href="/dieu-khoan-su-dung"
+                className="text-[#759cff] cursor-pointer ml-1"
+              >
+                điều khoản chính sách
+              </Link>
+            </span>
           </label>
         </Flex>
 

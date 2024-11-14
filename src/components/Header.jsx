@@ -196,8 +196,8 @@ const DesktopHeader = () => {
                       className="hover:cursor-pointer"
                       onClick={() => router.push("/tai-khoan")}
                     >
-                      <Settings className="w-5" />
-                      Cài đặt tài khoản
+                      <User className="w-5" />
+                      Tài khoản
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator />
                     <DropdownMenu.Item className="hover:cursor-pointer">
@@ -262,8 +262,8 @@ const DesktopHeader = () => {
                       className="hover:cursor-pointer"
                       onClick={() => router.push("/tai-khoan")}
                     >
-                      <Settings className="w-5" />
-                      Cài đặt tài khoản
+                      <User className="w-5" />
+                      Tài khoản
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator />
                     <DropdownMenu.Item className="hover:cursor-pointer">
@@ -451,12 +451,13 @@ const MobileHeader = () => {
                       Thông báo: Có 01 lỗi vi phạm !
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator />
+
                     <DropdownMenu.Item
                       className="hover:cursor-pointer"
                       onClick={() => router.push("/tai-khoan")}
                     >
-                      <Settings className="w-5" />
-                      Cài đặt tài khoản
+                      <User className="w-5" />
+                      Tài khoản
                     </DropdownMenu.Item>
                     <DropdownMenu.Separator />
                     <DropdownMenu.Item className="hover:cursor-pointer">
@@ -626,7 +627,15 @@ const RegisterDialog = () => {
           </label>
           <label className="flex items-center space-x-2">
             <input type="checkbox" className="form-checkbox" />
-            <span>Tôi đồng ý với Điều khoản chính sách</span>
+            <span>
+              Tôi đồng ý với
+              <Link
+                href="/dieu-khoan-su-dung"
+                className="text-[#759cff] cursor-pointer ml-1"
+              >
+                điều khoản chính sách
+              </Link>
+            </span>
           </label>
         </Flex>
 
@@ -830,7 +839,15 @@ const MobileRegisterDialog = () => {
           </label>
           <label className="flex items-center space-x-2">
             <input type="checkbox" className="form-checkbox" />
-            <span>Tôi đồng ý với Điều khoản chính sách</span>
+            <span>
+              Tôi đồng ý với
+              <Link
+                href="/dieu-khoan-su-dung"
+                className="text-[#759cff] cursor-pointer ml-1"
+              >
+                điều khoản chính sách
+              </Link>
+            </span>
           </label>
         </Flex>
 

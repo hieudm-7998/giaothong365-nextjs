@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function RegisterSection() {
   return (
     <div className="bg-[#285398] py-10">
@@ -9,8 +11,7 @@ function RegisterSection() {
             </h1>
             <p className="text-white">
               Đăng ký hội viên ngay bây giờ để nhận thông báo phạt nguội kịp
-              thời <br />
-              và hướng dẫn cách giải quyết đơn giản nhất.
+              thời và hướng dẫn cách giải quyết đơn giản nhất.
             </p>
           </div>
           <div>
@@ -78,9 +79,12 @@ function RegisterSection() {
                 <input type="checkbox" className="form-checkbox" />
                 <span className="text-white">
                   Tôi đồng ý với{" "}
-                  <span className="text-[#759cff] cursor-pointer">
+                  <Link
+                    href="/dieu-khoan-su-dung"
+                    className="text-[#759cff] cursor-pointer"
+                  >
                     điều khoản chính sách
-                  </span>
+                  </Link>
                 </span>
               </label>
 

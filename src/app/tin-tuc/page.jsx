@@ -43,8 +43,8 @@ function TinTuc() {
         </Swiper>
       </div>
       <PopularNewsBlock />
-      <TrafficNews />
       <LatestNews />
+      <TrafficNews />
     </>
   );
 }
@@ -159,6 +159,12 @@ const TrafficNews = () => {
         <h1 className="text-3xl text-[#0d47a1] font-semibold uppercase">
           Tin tức về giao thông
         </h1>
+          <button
+            className="text-[#3c73a7] font-semibold"
+            onClick={() => router.push("/tin-tuc")}
+          >
+            Xem tất cả
+          </button>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {news.map((item, index) => (

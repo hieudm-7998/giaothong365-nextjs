@@ -12,6 +12,7 @@ import {
 } from "@/context/LoginContext";
 import { ChevronRight, Eye, MessageSquareText, Share2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -109,9 +110,9 @@ const MainBanner = () => {
                   <input type="checkbox" className="form-checkbox" />
                   <span className="text-white text-sm py-2 lg:py-1 2xl:py-2">
                     Tôi đồng ý với{" "}
-                    <span className="text-[#759cff] cursor-pointer">
+                    <Link href="/dieu-khoan-su-dung" className="text-[#759cff] cursor-pointer">
                       điều khoản chính sách
-                    </span>
+                    </Link>
                   </span>
                 </label>
 

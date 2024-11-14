@@ -11,216 +11,94 @@ import {
 } from "@/context/LoginContext";
 
 function TraCuuPhatNguoi() {
+  const { loginType } = useLoginContext();
   return (
     <>
       <TraCuuPhatNguoiBanner />
-      <ViolationResult />
-      <RegisterSection />
+      <ViolationResult loginType={loginType} />
+      {loginType === DEFAULT && <RegisterSection />}
     </>
   );
 }
 
-const ViolationResult = () => {
-  const { loginType } = useLoginContext();
-
+const ViolationResult = ({ loginType }) => {
   return (
     <div className="container lg:max-w-[1024px] mb-20 pt-16">
-      <div className="bg-[#f5fafe] rounded-2xl shadow-lg p-10">
-        {loginType === NO_VIOLATION && (
-          <>
-            <div className="lg:w-2/5 mx-auto">
-              <div className="grid grid-cols-4 gap-4">
-                <div className="col-span-1">
-                  <svg
-                    width="80px"
-                    height="80px"
-                    viewBox="-1.6 -1.6 19.20 19.20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    stroke="#ffffff"
-                    strokeWidth="0.00016"
-                    className="mb-2 block mx-auto border border-gray-600 border-solid rounded-full"
-                  >
-                    <g id="SVGRepo_bgCarrier" strokeWidth="0">
-                      <rect
-                        x="-1.6"
-                        y="-1.6"
-                        width="19.20"
-                        height="19.20"
-                        rx="9.6"
-                        fill="#ffffff"
-                        strokeWidth="0"
-                      ></rect>
-                    </g>
-                    <g
-                      id="SVGRepo_tracerCarrier"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    ></g>
-                    <g id="SVGRepo_iconCarrier">
-                      {" "}
-                      <path
-                        d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"
-                        fill="#2c6672"
-                      ></path>{" "}
-                      <path
-                        d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z"
-                        fill="#2c6672"
-                      ></path>{" "}
-                    </g>
-                  </svg>
-                </div>
-                <div className="col-span-3">
-                  <h1 className="font-semibold text-lg text-[#0d47a1]">
-                    30H-XXX.XX
-                  </h1>
-                  <p className="text-black">Nguyễn Duy Bảo - 0963835542</p>
-                  <div className="flex items-center gap-2">
-                    <span className="bg-gray-400 text-white rounded-full px-2">
-                      Free
-                    </span>
-                    <span className="bg-gradient-to-r from-[#f6df91] to-[#d4af37] text-white rounded-full px-2">
-                      Gold
-                    </span>
-                    <span className="bg-gradient-to-r from-[#cac9c2] via-[#fafaeb] to-[#cac9c2] text-black rounded-full px-2">
-                      Platinum
-                    </span>
-                  </div>
+      {loginType === DEFAULT && <ViolationSearch />}
+      {loginType === NO_VIOLATION && (
+        <div className="bg-[#f5fafe] rounded-2xl shadow-lg p-10">
+          <div className="lg:w-2/5 mx-auto">
+            <div className="grid grid-cols-4 gap-4">
+              <div className="col-span-1">
+                <svg
+                  width="80px"
+                  height="80px"
+                  viewBox="-1.6 -1.6 19.20 19.20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="#ffffff"
+                  strokeWidth="0.00016"
+                  className="mb-2 block mx-auto border border-gray-600 border-solid rounded-full"
+                >
+                  <g id="SVGRepo_bgCarrier" strokeWidth="0">
+                    <rect
+                      x="-1.6"
+                      y="-1.6"
+                      width="19.20"
+                      height="19.20"
+                      rx="9.6"
+                      fill="#ffffff"
+                      strokeWidth="0"
+                    ></rect>
+                  </g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    {" "}
+                    <path
+                      d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"
+                      fill="#2c6672"
+                    ></path>{" "}
+                    <path
+                      d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z"
+                      fill="#2c6672"
+                    ></path>{" "}
+                  </g>
+                </svg>
+              </div>
+              <div className="col-span-3">
+                <h1 className="font-semibold text-lg text-[#0d47a1]">
+                  30H-XXX.XX
+                </h1>
+                <p className="text-black">Nguyễn Duy Bảo - 0963835542</p>
+                <div className="flex items-center gap-2">
+                  <span className="bg-gray-400 text-white rounded-full px-2">
+                    Free
+                  </span>
+                  <span className="bg-gradient-to-r from-[#f6df91] to-[#d4af37] text-white rounded-full px-2">
+                    Gold
+                  </span>
+                  <span className="bg-gradient-to-r from-[#cac9c2] via-[#fafaeb] to-[#cac9c2] text-black rounded-full px-2">
+                    Platinum
+                  </span>
                 </div>
               </div>
             </div>
+          </div>
 
-            <p className="text-center text-[#24ff00]">
-              Không phát hiện lỗi vi phạm
-            </p>
-            <p className="text-center text-black mb-10">
-              Mong bạn tiếp tục tuân thủ luật giao thông và lái xe an toàn!
-            </p>
+          <p className="text-center text-[#24ff00]">
+            Không phát hiện lỗi vi phạm
+          </p>
+          <p className="text-center text-black mb-10">
+            Mong bạn tiếp tục tuân thủ luật giao thông và lái xe an toàn!
+          </p>
 
-            
-            <div className="lg:w-[912px] border-solid border-l-0 border-t-0 border-r-0 border-b-[1px] border-[#b7c8fd] mt-2 mx-auto mb-5"></div>
-            <div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10 mb-5">
-                <div className="flex flex-col justify-center gap-2">
-                  <p>Biển số xe:</p>
-                  <label>
-                    <input
-                      type="text"
-                      placeholder="VD: 30K12363"
-                      className="w-full px-4 py-3 bg-white rounded-md transition-all border-solid border-gray-200 border-[1px]"
-                    />
-                  </label>
-                </div>
-                <div className="flex flex-col justify-center gap-2">
-                  <p>Loại phương tiện:</p>
-                  <label>
-                    <select
-                      className="w-full px-4 py-3 bg-white rounded-md transition-all border-solid border-gray-200 border-[1px]"
-                      defaultValue=""
-                    >
-                      <option value="" disabled>
-                        Chọn loại phương tiện
-                      </option>
-                      <option value="car">Ô tô</option>
-                      <option value="motorbike">Xe máy</option>
-                      <option value="bicycle">Xe đạp</option>
-                    </select>
-                  </label>
-                </div>
-              </div>
-              <button className="bg-[#da9956] block lg:w-1/3 mx-auto text-white font-semibold text-lg py-2 px-10 transition-all hover:opacity-80">
-                Tra cứu
-              </button>
-            </div>
-            <h1 className="text-center font-normal italic mt-10 text-[#0d47a1]">
-              Trích nguồn dữ liệu: Cổng thông tin điện tử Cục Cảnh sát giao
-              thông và Cục Đăng kiểm Việt Nam
-            </h1>
-          </>
-        )}
-        {loginType === HAS_VIOLATION && (
-          <>
-            <div className="lg:w-2/5 mx-auto">
-              <div className="grid grid-cols-4 gap-4">
-                <div className="col-span-1">
-                  <svg
-                    width="80px"
-                    height="80px"
-                    viewBox="-1.6 -1.6 19.20 19.20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    stroke="#ffffff"
-                    strokeWidth="0.00016"
-                    className="mb-2 block mx-auto border border-gray-600 border-solid rounded-full"
-                  >
-                    <g id="SVGRepo_bgCarrier" strokeWidth="0">
-                      <rect
-                        x="-1.6"
-                        y="-1.6"
-                        width="19.20"
-                        height="19.20"
-                        rx="9.6"
-                        fill="#ffffff"
-                        strokeWidth="0"
-                      ></rect>
-                    </g>
-                    <g
-                      id="SVGRepo_tracerCarrier"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    ></g>
-                    <g id="SVGRepo_iconCarrier">
-                      {" "}
-                      <path
-                        d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"
-                        fill="#2c6672"
-                      ></path>{" "}
-                      <path
-                        d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z"
-                        fill="#2c6672"
-                      ></path>{" "}
-                    </g>
-                  </svg>
-                </div>
-                <div className="col-span-3">
-                  <h1 className="font-semibold text-lg text-[#0d47a1]">
-                    30H-XXX.XX
-                  </h1>
-                  <p className="text-black">Nguyễn Duy Bảo - 0963835542</p>
-                  <div className="flex items-center gap-2">
-                    <span className="bg-gray-400 text-white rounded-full px-2">
-                      Free
-                    </span>
-                    <span className="bg-gradient-to-r from-[#f6df91] to-[#d4af37] text-white rounded-full px-2">
-                      Gold
-                    </span>
-                    <span className="bg-gradient-to-r from-[#cac9c2] via-[#fafaeb] to-[#cac9c2] text-black rounded-full px-2">
-                      Platinum
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <h1 className="text-2xl font-bold text-red-600 text-center py-10">
-              Bạn đang có 2 thông báo vi phạm
-            </h1>
-            <ViolationTable />
-            <ViolationTable2 />
-            <h1 className="text-center font-normal italic mt-10 text-[#0d47a1]">
-              Trích nguồn dữ liệu: Cổng thông tin điện tử Cục Cảnh sát giao
-              thông và Cục Đăng kiểm Việt Nam
-            </h1>
-          </>
-        )}
-        {loginType === DEFAULT && (
+          <div className="lg:w-[912px] border-solid border-l-0 border-t-0 border-r-0 border-b-[1px] border-[#b7c8fd] mt-2 mx-auto mb-5"></div>
           <div>
-            <h1 className="text-center text-lg uppercase font-semibold">
-              Mời khách hàng nhập thông tin BKS cho mỗi lần tra cứu
-            </h1>
-            <p className="text-center mb-5">
-              Nhập thông tin vào những ô dưới để tra cứu nhé bạn!
-            </p>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10 mb-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10 mb-5">
               <div className="flex flex-col justify-center gap-2">
                 <p>Biển số xe:</p>
                 <label>
@@ -252,8 +130,88 @@ const ViolationResult = () => {
               Tra cứu
             </button>
           </div>
-        )}
-      </div>
+          <h1 className="text-center font-normal italic mt-10 text-[#0d47a1]">
+            Trích nguồn dữ liệu: Cổng thông tin điện tử Cục Cảnh sát giao thông
+            và Cục Đăng kiểm Việt Nam
+          </h1>
+        </div>
+      )}
+      {loginType === HAS_VIOLATION && (
+        <>
+          <div className="bg-[#f5fafe] rounded-2xl shadow-lg p-4 lg:p-10">
+            <div className="lg:w-3/5 mx-auto">
+              <div className="flex items-center justify-center gap-4">
+                <div className="col-span-1 flex flex-col items-center justify-center">
+                  <svg
+                    viewBox="-1.6 -1.6 19.20 19.20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    stroke="#ffffff"
+                    strokeWidth="0.00016"
+                    className="block w-full h-full max-w-[100px] mx-auto border border-gray-600 border-solid rounded-full"
+                  >
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0">
+                      <rect
+                        x="-1.6"
+                        y="-1.6"
+                        width="19.20"
+                        height="19.20"
+                        rx="9.6"
+                        fill="#ffffff"
+                        strokeWidth="0"
+                      ></rect>
+                    </g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      {" "}
+                      <path
+                        d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"
+                        fill="#2c6672"
+                      ></path>{" "}
+                      <path
+                        d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z"
+                        fill="#2c6672"
+                      ></path>{" "}
+                    </g>
+                  </svg>
+                </div>
+                <div className="col-span-3 flex flex-col justify-center">
+                  <h1 className="font-semibold text-lg text-[#0d47a1]">
+                    30H-XXX.XX
+                  </h1>
+                  <p className="text-black italic">(Xe ô tô - Biển trắng)</p>
+                  <p className="text-black mb-1">Nguyễn Duy Bảo - 0963835542</p>
+                  <div className="flex items-center gap-2">
+                    <span className="bg-gray-400 text-white rounded-full px-2">
+                      Free
+                    </span>
+                    <span className="bg-gradient-to-r from-[#f6df91] to-[#d4af37] text-white rounded-full px-2">
+                      Gold
+                    </span>
+                    <span className="bg-gradient-to-r from-[#cac9c2] via-[#fafaeb] to-[#cac9c2] text-black rounded-full px-2">
+                      Platinum
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h1 className="text-2xl font-bold text-red-600 text-center py-10">
+              Bạn đang có 2 thông báo vi phạm
+            </h1>
+            <ViolationTable />
+            <ViolationTable2 />
+            <h1 className="text-center font-normal italic mt-10 text-[#0d47a1]">
+              Trích nguồn dữ liệu: Cổng thông tin điện tử Cục Cảnh sát giao
+              thông và Cục Đăng kiểm Việt Nam
+            </h1>
+          </div>
+          <ViolationSearch />
+        </>
+      )}
     </div>
   );
 };
@@ -413,6 +371,52 @@ const ViolationTable2 = () => {
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  );
+};
+
+const ViolationSearch = () => {
+  return (
+    <div className="bg-[#f5fafe] rounded-2xl shadow-lg p-10 mt-10">
+      <h1 className="text-center text-lg uppercase font-semibold">
+        Mời khách hàng nhập thông tin BKS cho mỗi lần tra cứu
+      </h1>
+      <p className="text-center mb-5">
+        Nhập thông tin vào những ô dưới để tra cứu nhé bạn!
+      </p>
+      <div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10 mb-10">
+          <div className="flex flex-col justify-center gap-2">
+            <p>Biển số xe:</p>
+            <label>
+              <input
+                type="text"
+                placeholder="VD: 30K12363"
+                className="w-full px-4 py-3 bg-white rounded-md transition-all border-solid border-gray-200 border-[1px]"
+              />
+            </label>
+          </div>
+          <div className="flex flex-col justify-center gap-2">
+            <p>Loại phương tiện:</p>
+            <label>
+              <select
+                className="w-full px-4 py-3 bg-white rounded-md transition-all border-solid border-gray-200 border-[1px]"
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Chọn loại phương tiện
+                </option>
+                <option value="car">Ô tô</option>
+                <option value="motorbike">Xe máy</option>
+                <option value="bicycle">Xe đạp</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <button className="bg-[#da9956] block lg:w-1/3 mx-auto text-white font-semibold text-lg py-2 px-10 transition-all hover:opacity-80">
+          Tra cứu
+        </button>
       </div>
     </div>
   );

@@ -87,54 +87,8 @@ function TraCuuDiemPhatNguoi() {
             </Tabs.Trigger>
           </Tabs.List>
           <Tabs.Content className="TabsContent" value="diem-gan-ban">
-            {loginType === HAS_VIOLATION ||
-              (loginType === NO_VIOLATION && (
-                <>
-                  <TextField.Root
-                    placeholder="Nhập vị trí của bạn"
-                    className="!h-10 mb-3"
-                  >
-                    <TextField.Slot>
-                      <Search height="16" width="16" />
-                    </TextField.Slot>
-                  </TextField.Root>
-                  <TextField.Root
-                    placeholder="Chọn bán kính hiện thị điểm phạt nguội"
-                    className="!h-10 mb-10"
-                  ></TextField.Root>
-                  <p className="text-center mb-5">
-                    Hình ảnh bản đồ điểm phạt nguội gần khu vực bạn vừa tìm
-                    kiếm:
-                  </p>
-                  <div>
-                    <img
-                      src="/images/map.png"
-                      className="block mx-auto mb-10"
-                      alt=""
-                    />
-                  </div>
-                  <div className="mb-5">
-                    <h1 className="font-semibold text-lg text-[#0d47a1]">
-                      Điểm phạt nguội Giảng Võ
-                    </h1>
-                    <p className="text-base">23 Giảng Võ, Ba Đình, Hà Nội</p>
-                  </div>
-                  <div className="mb-5">
-                    <h1 className="font-semibold text-lg text-[#0d47a1]">
-                      Điểm phạt nguội Tôn Đức Thắng
-                    </h1>
-                    <p className="text-base">
-                      23 Tôn Đức Thắng, Đống Đa, Hà Nội
-                    </p>
-                  </div>
-                  <div className="mb-5">
-                    <h1 className="font-semibold text-lg text-[#0d47a1]">
-                      Điểm phạt nguội Hào Nam
-                    </h1>
-                    <p className="text-base">23 Hào Nam, Đống Đa, Hà Nội</p>
-                  </div>
-                </>
-              ))}
+            {loginType === HAS_VIOLATION && <DiemGanBan />}
+            {loginType === NO_VIOLATION && <DiemGanBan />}
             {loginType === DEFAULT && (
               <div>
                 <img
@@ -151,54 +105,8 @@ function TraCuuDiemPhatNguoi() {
             )}
           </Tabs.Content>
           <Tabs.Content className="TabsContent" value="diem-nong">
-            {loginType === HAS_VIOLATION ||
-              (loginType === NO_VIOLATION && (
-                <>
-                  <TextField.Root
-                    placeholder="Nhập vị trí của bạn"
-                    className="!h-10 mb-3"
-                  >
-                    <TextField.Slot>
-                      <Search height="16" width="16" />
-                    </TextField.Slot>
-                  </TextField.Root>
-                  <TextField.Root
-                    placeholder="Chọn bán kính hiện thị điểm phạt nguội"
-                    className="!h-10 mb-10"
-                  ></TextField.Root>
-                  <p className="text-center mb-5">
-                    Hình ảnh bản đồ điểm phạt nguội gần khu vực bạn vừa tìm
-                    kiếm:
-                  </p>
-                  <div>
-                    <img
-                      src="/images/map.png"
-                      className="block mx-auto mb-10"
-                      alt=""
-                    />
-                  </div>
-                  <div className="mb-5">
-                    <h1 className="font-semibold text-lg text-[#0d47a1]">
-                      Điểm phạt nguội Giảng Võ
-                    </h1>
-                    <p className="text-base">23 Giảng Võ, Ba Đình, Hà Nội</p>
-                  </div>
-                  <div className="mb-5">
-                    <h1 className="font-semibold text-lg text-[#0d47a1]">
-                      Điểm phạt nguội Tôn Đức Thắng
-                    </h1>
-                    <p className="text-base">
-                      23 Tôn Đức Thắng, Đống Đa, Hà Nội
-                    </p>
-                  </div>
-                  <div className="mb-5">
-                    <h1 className="font-semibold text-lg text-[#0d47a1]">
-                      Điểm phạt nguội Hào Nam
-                    </h1>
-                    <p className="text-base">23 Hào Nam, Đống Đa, Hà Nội</p>
-                  </div>
-                </>
-              ))}
+            {loginType === HAS_VIOLATION && <DiemNong />}
+            {loginType === NO_VIOLATION && <DiemNong />}
             {loginType === DEFAULT && (
               <div>
                 <img
@@ -215,54 +123,8 @@ function TraCuuDiemPhatNguoi() {
             )}
           </Tabs.Content>
           <Tabs.Content className="TabsContent" value="lo-trinh-ban-den">
-            {loginType === HAS_VIOLATION ||
-              (loginType === NO_VIOLATION && (
-                <>
-                  <TextField.Root
-                    placeholder="Nhập vị trí của bạn"
-                    className="!h-10 mb-3"
-                  >
-                    <TextField.Slot>
-                      <Search height="16" width="16" />
-                    </TextField.Slot>
-                  </TextField.Root>
-                  <TextField.Root
-                    placeholder="Chọn bán kính hiện thị điểm phạt nguội"
-                    className="!h-10 mb-10"
-                  ></TextField.Root>
-                  <p className="text-center mb-5">
-                    Hình ảnh bản đồ điểm phạt nguội gần khu vực bạn vừa tìm
-                    kiếm:
-                  </p>
-                  <div>
-                    <img
-                      src="/images/map.png"
-                      className="block mx-auto mb-10"
-                      alt=""
-                    />
-                  </div>
-                  <div className="mb-5">
-                    <h1 className="font-semibold text-lg text-[#0d47a1]">
-                      Điểm phạt nguội Giảng Võ
-                    </h1>
-                    <p className="text-base">23 Giảng Võ, Ba Đình, Hà Nội</p>
-                  </div>
-                  <div className="mb-5">
-                    <h1 className="font-semibold text-lg text-[#0d47a1]">
-                      Điểm phạt nguội Tôn Đức Thắng
-                    </h1>
-                    <p className="text-base">
-                      23 Tôn Đức Thắng, Đống Đa, Hà Nội
-                    </p>
-                  </div>
-                  <div className="mb-5">
-                    <h1 className="font-semibold text-lg text-[#0d47a1]">
-                      Điểm phạt nguội Hào Nam
-                    </h1>
-                    <p className="text-base">23 Hào Nam, Đống Đa, Hà Nội</p>
-                  </div>
-                </>
-              ))}
+            {loginType === HAS_VIOLATION && <LoTrinhBanDen />}
+            {loginType === NO_VIOLATION && <LoTrinhBanDen />}
             {loginType === DEFAULT && (
               <div>
                 <img
@@ -284,5 +146,166 @@ function TraCuuDiemPhatNguoi() {
     </>
   );
 }
+
+const DiemGanBan = () => {
+  return (
+    <>
+      <h1 className="text-center text-lg font-semibold mb-5">
+        Vui lòng chọn tỉnh/thành phố & quận/huyện.
+      </h1>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <select
+          className="w-full px-4 py-2 !h-10 bg-white rounded-md shadow-sm hover:cursor-pointer border-[1px] border-solid border-[#0d47a1] transition-all opacity-70"
+          defaultValue=""
+        >
+          <option value="" disabled>
+            Chọn tỉnh/thành phố
+          </option>
+          <option value="car">Ô tô</option>
+          <option value="motorbike">Xe máy</option>
+          <option value="bicycle">Xe đạp</option>
+        </select>
+        <select
+          className="w-full px-4 py-2 !h-10 mb-5 bg-white rounded-md shadow-sm hover:cursor-pointer border-[1px] border-solid border-[#0d47a1] transition-all opacity-70"
+          defaultValue=""
+        >
+          <option value="" disabled>
+            Chọn quận/huyện
+          </option>
+          <option value="car">Ô tô</option>
+          <option value="motorbike">Xe máy</option>
+          <option value="bicycle">Xe đạp</option>
+        </select>
+      </div>
+      <p className="text-center mb-5">
+        Hình ảnh bản đồ điểm phạt nguội gần khu vực bạn vừa tìm kiếm:
+      </p>
+      <div>
+        <img src="/images/map.png" className="block mx-auto mb-10" alt="" />
+      </div>
+      <div className="mb-5">
+        <h1 className="font-semibold text-lg text-[#0d47a1]">
+          Điểm phạt nguội Giảng Võ
+        </h1>
+        <p className="text-base">23 Giảng Võ, Ba Đình, Hà Nội</p>
+      </div>
+      <div className="mb-5">
+        <h1 className="font-semibold text-lg text-[#0d47a1]">
+          Điểm phạt nguội Tôn Đức Thắng
+        </h1>
+        <p className="text-base">23 Tôn Đức Thắng, Đống Đa, Hà Nội</p>
+      </div>
+      <div className="mb-5">
+        <h1 className="font-semibold text-lg text-[#0d47a1]">
+          Điểm phạt nguội Hào Nam
+        </h1>
+        <p className="text-base">23 Hào Nam, Đống Đa, Hà Nội</p>
+      </div>
+    </>
+  );
+};
+
+const DiemNong = () => {
+  return (
+    <>
+      <h1 className="text-center text-lg font-semibold mb-5">
+        Vui lòng chọn tỉnh/thành phố.
+      </h1>
+      <select
+        className="w-full px-4 py-2 !h-10 mb-5 bg-white rounded-md shadow-sm hover:cursor-pointer border-[1px] border-solid border-[#0d47a1] transition-all opacity-70"
+        defaultValue=""
+      >
+        <option value="" disabled>
+          Chọn tỉnh/thành phố
+        </option>
+        <option value="car">Ô tô</option>
+        <option value="motorbike">Xe máy</option>
+        <option value="bicycle">Xe đạp</option>
+      </select>
+      <p className="text-center mb-5">
+        Hình ảnh bản đồ điểm phạt nguội gần khu vực bạn vừa tìm kiếm:
+      </p>
+      <div>
+        <img src="/images/map.png" className="block mx-auto mb-10" alt="" />
+      </div>
+      <div className="mb-5">
+        <h1 className="font-semibold text-lg text-[#0d47a1]">
+          Điểm phạt nguội Giảng Võ
+        </h1>
+        <p className="text-base">23 Giảng Võ, Ba Đình, Hà Nội</p>
+      </div>
+      <div className="mb-5">
+        <h1 className="font-semibold text-lg text-[#0d47a1]">
+          Điểm phạt nguội Tôn Đức Thắng
+        </h1>
+        <p className="text-base">23 Tôn Đức Thắng, Đống Đa, Hà Nội</p>
+      </div>
+      <div className="mb-5">
+        <h1 className="font-semibold text-lg text-[#0d47a1]">
+          Điểm phạt nguội Hào Nam
+        </h1>
+        <p className="text-base">23 Hào Nam, Đống Đa, Hà Nội</p>
+      </div>
+    </>
+  );
+};
+
+const LoTrinhBanDen = () => {
+  return (
+    <>
+      <h1 className="text-center text-lg font-semibold mb-5">
+        Vui lòng chọn loại lộ trình.
+      </h1>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <select
+          className="w-full px-4 py-2 !h-10 bg-white rounded-md shadow-sm hover:cursor-pointer border-[1px] border-solid border-[#0d47a1] transition-all opacity-70"
+          defaultValue=""
+        >
+          <option value="" disabled>
+            Chọn loại lộ trình
+          </option>
+          <option value="car">Cao tốc</option>
+          <option value="motorbike">Nội đô</option>
+          <option value="bicycle">Quốc lộ</option>
+        </select>
+        <select
+          className="w-full px-4 py-2 !h-10 mb-5 bg-white rounded-md shadow-sm hover:cursor-pointer border-[1px] border-solid border-[#0d47a1] transition-all opacity-70"
+          defaultValue=""
+        >
+          <option value="" disabled>
+            Chọn tuyến đường
+          </option>
+          <option value="car">Ô tô</option>
+          <option value="motorbike">Xe máy</option>
+          <option value="bicycle">Xe đạp</option>
+        </select>
+      </div>
+      <p className="text-center mb-5">
+        Hình ảnh bản đồ điểm phạt nguội gần khu vực bạn vừa tìm kiếm:
+      </p>
+      <div>
+        <img src="/images/map.png" className="block mx-auto mb-10" alt="" />
+      </div>
+      <div className="mb-5">
+        <h1 className="font-semibold text-lg text-[#0d47a1]">
+          Điểm phạt nguội Giảng Võ
+        </h1>
+        <p className="text-base">23 Giảng Võ, Ba Đình, Hà Nội</p>
+      </div>
+      <div className="mb-5">
+        <h1 className="font-semibold text-lg text-[#0d47a1]">
+          Điểm phạt nguội Tôn Đức Thắng
+        </h1>
+        <p className="text-base">23 Tôn Đức Thắng, Đống Đa, Hà Nội</p>
+      </div>
+      <div className="mb-5">
+        <h1 className="font-semibold text-lg text-[#0d47a1]">
+          Điểm phạt nguội Hào Nam
+        </h1>
+        <p className="text-base">23 Hào Nam, Đống Đa, Hà Nội</p>
+      </div>
+    </>
+  );
+};
 
 export default TraCuuDiemPhatNguoi;
