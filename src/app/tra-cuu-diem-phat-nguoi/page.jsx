@@ -142,7 +142,7 @@ function TraCuuDiemPhatNguoi() {
           </Tabs.Content>
         </Tabs.Root>
       </div>
-      <RegisterSection />
+      {loginType === DEFAULT && <RegisterSection />}
     </>
   );
 }

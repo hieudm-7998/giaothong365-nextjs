@@ -8,6 +8,7 @@ import { Scrollbar } from "swiper/modules";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const btns = [
   "Tất cả",
@@ -25,13 +26,14 @@ const btns = [
 
 function DoiTac() {
   const [selected, setSelected] = useState(btns[0]);
+  const isDesktop = useMediaQuery("(min-width: 960px)");
 
   const settings = {
     dots: false,
     infinite: false,
-    slidesToShow: 4,
+    slidesToShow: isDesktop ? 4 : 1,
     slidesToScroll: 1,
-    edgeFriction: 0
+    edgeFriction: 0,
   };
 
   return (
@@ -51,7 +53,9 @@ function DoiTac() {
                 key={index}
                 onClick={() => setSelected(item)}
                 className={`${
-                  selected === item ? "outline outline-[2px] outline-[#0d47a1]" : ""
+                  selected === item
+                    ? "outline outline-[2px] outline-[#0d47a1]"
+                    : ""
                 } mb-[2px] text-center bg-[#E0E0E0] rounded-xl `}
               >
                 {item}
