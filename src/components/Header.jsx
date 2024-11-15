@@ -139,44 +139,7 @@ const DesktopHeader = () => {
                       radius="full"
                       className="!w-10 !h-10 hover:cursor-pointer border-[#285398] border border-solid !p-0 relative"
                     >
-                      <svg
-                        // width="40px"
-                        // height="40px"
-                        viewBox="-1.6 -1.6 19.20 19.20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        stroke="#ffffff"
-                        strokeWidth="0.00016"
-                        // className="!w-60[px] !h-[60px]"
-                      >
-                        <g id="SVGRepo_bgCarrier" strokeWidth="0">
-                          <rect
-                            x="-1.6"
-                            y="-1.6"
-                            width="19.20"
-                            height="19.20"
-                            rx="9.6"
-                            fill="#ffffff"
-                            strokeWidth="0"
-                          ></rect>
-                        </g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          {" "}
-                          <path
-                            d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"
-                            fill="#2c6672"
-                          ></path>{" "}
-                          <path
-                            d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z"
-                            fill="#2c6672"
-                          ></path>{" "}
-                        </g>
-                      </svg>
+                      <img src="/images/avatar.png" className="border-[#285398] border border-solid rounded-full" alt="" />
                       <div className="absolute flex items-center justify-center flex-col w-5 h-5 z-20 text-white text-sm -right-2 -top-1 bg-red-600 rounded-full">
                         1
                       </div>
@@ -217,44 +180,7 @@ const DesktopHeader = () => {
                       radius="full"
                       className="!w-10 !h-10 hover:cursor-pointer border-[#285398] border border-solid !p-0 relative"
                     >
-                      <svg
-                        // width="40px"
-                        // height="40px"
-                        viewBox="-1.6 -1.6 19.20 19.20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        stroke="#ffffff"
-                        strokeWidth="0.00016"
-                        // className="!w-60[px] !h-[60px]"
-                      >
-                        <g id="SVGRepo_bgCarrier" strokeWidth="0">
-                          <rect
-                            x="-1.6"
-                            y="-1.6"
-                            width="19.20"
-                            height="19.20"
-                            rx="9.6"
-                            fill="#ffffff"
-                            strokeWidth="0"
-                          ></rect>
-                        </g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          {" "}
-                          <path
-                            d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"
-                            fill="#2c6672"
-                          ></path>{" "}
-                          <path
-                            d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z"
-                            fill="#2c6672"
-                          ></path>{" "}
-                        </g>
-                      </svg>
+                      <img src="/images/avatar.png" className="border-[#285398] border border-solid rounded-full" alt="" />
                     </Button>
                   </DropdownMenu.Trigger>
                   <DropdownMenu.Content align="end">
@@ -329,46 +255,9 @@ const MobileHeader = () => {
                     <Button
                       variant="soft"
                       radius="full"
-                      className="!w-10 !h-10 hover:cursor-pointer border-[#285398] border border-solid !p-0 relative"
+                      className="!w-10 !h-10 hover:cursor-pointer  !p-0 relative"
                     >
-                      <svg
-                        // width="40px"
-                        // height="40px"
-                        viewBox="-1.6 -1.6 19.20 19.20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        stroke="#ffffff"
-                        strokeWidth="0.00016"
-                        // className="!w-60[px] !h-[60px]"
-                      >
-                        <g id="SVGRepo_bgCarrier" strokeWidth="0">
-                          <rect
-                            x="-1.6"
-                            y="-1.6"
-                            width="19.20"
-                            height="19.20"
-                            rx="9.6"
-                            fill="#ffffff"
-                            strokeWidth="0"
-                          ></rect>
-                        </g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          {" "}
-                          <path
-                            d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"
-                            fill="#2c6672"
-                          ></path>{" "}
-                          <path
-                            d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z"
-                            fill="#2c6672"
-                          ></path>{" "}
-                        </g>
-                      </svg>
+                      <img src="/images/avatar.png" className="border-[#285398] border border-solid rounded-full" alt="" />
                     </Button>
                   </DropdownMenu.Trigger>
                   <DropdownMenu.Content align="end">
@@ -395,44 +284,7 @@ const MobileHeader = () => {
                       radius="full"
                       className="!w-10 !h-10 hover:cursor-pointer border-[#285398] border border-solid !p-0 relative"
                     >
-                      <svg
-                        // width="40px"
-                        // height="40px"
-                        viewBox="-1.6 -1.6 19.20 19.20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        stroke="#ffffff"
-                        strokeWidth="0.00016"
-                        // className="!w-60[px] !h-[60px]"
-                      >
-                        <g id="SVGRepo_bgCarrier" strokeWidth="0">
-                          <rect
-                            x="-1.6"
-                            y="-1.6"
-                            width="19.20"
-                            height="19.20"
-                            rx="9.6"
-                            fill="#ffffff"
-                            strokeWidth="0"
-                          ></rect>
-                        </g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          {" "}
-                          <path
-                            d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"
-                            fill="#2c6672"
-                          ></path>{" "}
-                          <path
-                            d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z"
-                            fill="#2c6672"
-                          ></path>{" "}
-                        </g>
-                      </svg>
+                      <img src="/images/avatar.png" className="border-[#285398] border border-solid rounded-full" alt="" />
                       <div className="absolute flex items-center justify-center flex-col w-5 h-5 z-20 text-white text-sm -right-2 -top-1 bg-red-600 rounded-full">
                         1
                       </div>
