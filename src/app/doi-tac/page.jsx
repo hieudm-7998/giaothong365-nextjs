@@ -45,16 +45,16 @@ function DoiTac() {
             className="w-full py-1 px-4 border-solid border-[1px] border-[#0d47a1] rounded-md mb-3"
             placeholder="Tìm thương hiệu"
           />
-          <Slider {...settings} className="mb-5">
+          <Slider {...settings} className="mb-5 doi-tac">
             {btns.map((item, index) => (
               <button
                 key={index}
                 onClick={() => setSelected(item)}
                 className={`${
                   selected === item
-                    ? "outline outline-[2px] outline-[#0d47a1]"
+                    ? "bg-[#da9956]"
                     : ""
-                } mb-[2px] text-center bg-[#E0E0E0] rounded-xl `}
+                } mb-[2px] py-1 text-center bg-[#0d47a1] rounded-xl text-white transition-all`}
               >
                 {item}
               </button>

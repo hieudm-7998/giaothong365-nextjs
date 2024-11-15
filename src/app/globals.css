@@ -11,7 +11,7 @@
 }
 
 .radix-themes {
-	--default-font-family: var(--font-montserrat) !important;
+  --default-font-family: var(--font-montserrat) !important;
 }
 
 body {
@@ -38,14 +38,14 @@ select {
   background-repeat: no-repeat;
 }
 
-.news-bg{
+.news-bg {
   background: url("/images/news-bg.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.benefit-bg{
+.benefit-bg {
   background: url("/images/loi-ich-dang-ky-hoi-vien-bg.png");
   background-position: center;
   background-size: cover;
@@ -77,40 +77,39 @@ select {
   z-index: -1; /* Ensure it stays behind content */
 }
 
-
 .row.cmt {
-	padding-left: 15px;
-	padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .cmt h4 {
-	color: #2d58d3;
-	font-weight: bold;
-	border-bottom: solid 2px #0d47a1;
-	text-transform: uppercase;
-	margin-bottom: 15px;
+  color: #2d58d3;
+  font-weight: bold;
+  border-bottom: solid 2px #0d47a1;
+  text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
 .cmt h5 {
-	font-weight: bold;
-	color: #376aff;
+  font-weight: bold;
+  color: #376aff;
 }
 
 .cmt p {
-	border-bottom: solid 2px #e4e4e4;
-	margin-bottom: 15px;
+  border-bottom: solid 2px #e4e4e4;
+  margin-bottom: 15px;
 }
 
 .cmt {
-	margin-bottom: 15px;
-	background-color: rgba(239,239,239,.8);
-	padding-bottom: 15px;
-	padding-top: 15px;
-	margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: rgba(239, 239, 239, 0.8);
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin-top: 15px;
 }
 
 .cmt input {
-	width: 100%;
+  width: 100%;
 }
 
 .slick-slide {
@@ -119,4 +118,54 @@ select {
   margin-left: 2px;
   margin-bottom: 2px;
   width: 200px !important;
+}
+
+.slick-slider::before {
+  content: "";
+  background: linear-gradient(
+    to right,
+    rgb(255 255 255),
+    rgb(235 244 246 / 0%)
+  );
+  position: absolute;
+  width: 133px;
+  height: 35px;
+  z-index: 9;
+  left: -1px;
+}
+
+.slick-slider::after {
+  content: "";
+  background: linear-gradient(to left, rgb(255 255 255), rgb(235 244 246 / 0%));
+  position: absolute;
+  width: 133px;
+  height: 35px;
+  z-index: 9;
+  top: 0;
+  right: -1px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #0d47a1;
+}
+
+.slick-next {
+  right: 0;
+  z-index: 300;
+}
+.slick-prev {
+  left: 0;
+  opacity: 1;
+  z-index: 300;
+}
+
+.slick-prev:before, .slick-next:before {
+  opacity: 1;
+}
+
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  color: #0d47a1 !important;
+  opacity: 1;
 }
