@@ -29,10 +29,10 @@ const ViolationResult = ({ loginType }) => {
         <div className="bg-[#f5fafe] rounded-2xl shadow-lg p-10">
           <div className="lg:w-2/5 mx-auto">
             <div className="grid grid-cols-4 gap-4">
-              <div className="col-span-1">
+              <div className="col-span-1 flex flex-col items-center justify-center">
                 <img
                   src="/images/avatar.png"
-                  className="border-[#285398] border border-solid rounded-full"
+                  className="border-[#285398] border border-solid rounded-full block mx-auto"
                   alt=""
                 />
               </div>
@@ -54,7 +54,7 @@ const ViolationResult = ({ loginType }) => {
             </div>
           </div>
 
-          <p className="text-center text-[#24ff00]">
+          <p className="text-center text-[#24ff00] mt-5">
             Không phát hiện lỗi vi phạm
           </p>
           <p className="text-center text-black mb-10">
@@ -109,7 +109,7 @@ const ViolationResult = ({ loginType }) => {
                 <div className="col-span-1 flex flex-col items-center justify-center">
                   <img
                     src="/images/avatar.png"
-                    className="border-[#285398] border border-solid rounded-full"
+                    className="border-[#285398] border border-solid rounded-full block mx-auto"
                     alt=""
                   />
                 </div>
