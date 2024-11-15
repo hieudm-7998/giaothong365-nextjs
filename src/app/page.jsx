@@ -110,7 +110,11 @@ const MainBanner = () => {
                   <input type="checkbox" className="form-checkbox" />
                   <span className="text-white text-sm py-2 lg:py-1 2xl:py-2">
                     Tôi đồng ý với{" "}
-                    <Link href="/dieu-khoan-su-dung" className="text-[#759cff] cursor-pointer">
+                    <Link
+                      href="/dieu-khoan-su-dung"
+                      target="_blank"
+                      className="text-[#759cff] cursor-pointer"
+                    >
                       điều khoản chính sách
                     </Link>
                   </span>

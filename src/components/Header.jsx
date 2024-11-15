@@ -639,6 +639,7 @@ const RegisterDialog = () => {
                 <span>
                   Tôi đồng ý với
                   <Link
+                    target="_blank"
                     href="/dieu-khoan-su-dung"
                     className="text-[#759cff] cursor-pointer ml-1"
                   >
@@ -959,6 +960,7 @@ const MobileRegisterDialog = () => {
                 <span>
                   Tôi đồng ý với
                   <Link
+                    target="_blank"
                     href="/dieu-khoan-su-dung"
                     className="text-[#759cff] cursor-pointer ml-1"
                   >

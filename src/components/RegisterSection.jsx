@@ -80,6 +80,7 @@ function RegisterSection() {
                 <span className="text-white">
                   Tôi đồng ý với{" "}
                   <Link
+                    target="_blank"
                     href="/dieu-khoan-su-dung"
                     className="text-[#759cff] cursor-pointer"
                   >
