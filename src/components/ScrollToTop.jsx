@@ -28,7 +28,7 @@ function ScrollToTop() {
       }}
       className={`${
         isScrolling ? "flex" : "hidden"
-      } fixed bottom-28 right-5 hover:cursor-pointer hover:opacity-85 transition-all h-10 w-10 items-center justify-center flex-col border-solid border-gray-200 bg-white border-[1px] z-30 rounded-full`}
+      } fixed bottom-32 right-5 hover:cursor-pointer hover:shadow-md hover:opacity-85 transition-all h-10 w-10 items-center justify-center flex-col border-solid border-gray-200 bg-white border-[1px] z-30 rounded-full`}
     >
       <ChevronUp />
     </button>

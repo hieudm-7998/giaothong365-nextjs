@@ -1,4 +1,4 @@
-import { Edit, Trash } from "lucide-react";
+import { Edit, PlusCircle, Trash } from "lucide-react";
 
 function TaiKhoan() {
   return (
@@ -163,7 +163,7 @@ function TaiKhoan() {
           </div>
 
           <div className="sm:col-span-2 lg:col-span-3 flex justify-center mt-6">
-            <button className="bg-[#da9956] block lg:w-1/3 mx-auto text-white font-semibold text-lg py-2 px-10 transition-all hover:opacity-80">
+            <button className="bg-[#da9956] block lg:w-1/3 mx-auto text-center text-white font-semibold text-lg py-2 px-10 transition-all hover:opacity-80">
               Lưu thông tin
             </button>
           </div>
@@ -187,12 +187,10 @@ function TaiKhoan() {
                 />
               </div>
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-semibold">
-                  Số điện thoại đã đăng ký
-                </label>
+                <label className="mb-1 font-semibold">Loại phương tiện</label>
                 <input
-                  type="number"
-                  placeholder="0909909099"
+                  type="text"
+                  placeholder="Ô tô"
                   className="border border-solid border-gray-300 p-2 rounded bg-gray-100"
                   disabled
                 />
@@ -220,12 +218,10 @@ function TaiKhoan() {
                 />
               </div>
               <div className="flex flex-col flex-1">
-                <label className="mb-1 font-semibold">
-                  Số điện thoại đã đăng ký
-                </label>
+                <label className="mb-1 font-semibold">Loại phương tiện</label>
                 <input
-                  type="number"
-                  placeholder="0909909099"
+                  type="text"
+                  placeholder="Ô tô"
                   className="border border-solid border-gray-300 p-2 rounded bg-gray-100"
                   disabled
                 />
@@ -243,8 +239,12 @@ function TaiKhoan() {
             </div>
           </div>
 
+          <button className="mx-auto mt-4 flex text-sm text-center items-center gap-2 px-2 py-1 border-[1px] border-solid border-[#0d47a1] text-[#0d47a1] hover:text-white hover:bg-[#0d47a1] rounded transition-all hover:opacity-85">
+            <PlusCircle className="w-4" />
+            Thêm phương tiện
+          </button>
           <div className="sm:col-span-2 lg:col-span-3 flex justify-center mt-4">
-            <button className="bg-[#da9956] block lg:w-1/3 mx-auto text-white font-semibold text-lg py-2 px-10 transition-all hover:opacity-80">
+            <button className="bg-[#da9956] block lg:w-1/3 mx-auto text-center text-white font-semibold text-lg py-2 px-10 transition-all hover:opacity-80">
               Lưu thông tin
             </button>
           </div>

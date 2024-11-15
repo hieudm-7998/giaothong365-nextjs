@@ -3,6 +3,11 @@
 import { Box, ScrollArea } from "@radix-ui/themes";
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Scrollbar } from "swiper/modules";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const btns = [
   "Tất cả",
@@ -21,56 +26,38 @@ const btns = [
 function DoiTac() {
   const [selected, setSelected] = useState(btns[0]);
 
+  const settings = {
+    dots: false,
+    infinite: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    edgeFriction: 0
+  };
+
   return (
     <div className="container lg:max-w-[1024px] pt-20 lg:pt-[97px]">
       <div className="py-10">
         <h1 className="text-center text-2xl font-semibold text-[#0d47a1] mb-6">
           Đối tác của Giao thông 365
         </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-10">
-          <div className="flex flex-col justify-center gap-2 rounded-lg shadow-lg px-4 py-8">
-            <h1 className="text-lg font-semibold text-[#0d47a1]">
-              Có chất lượng
-            </h1>
-            <p>
-              Thương hiệu sở hữu sản phẩm, dịch vụ chất lượng cao và ổn định
-            </p>
-          </div>
-          <div className="flex flex-col justify-center gap-2 rounded-lg shadow-lg px-4 py-8">
-            <h1 className="text-lg font-semibold text-[#0d47a1]">
-              Có danh tiếng
-            </h1>
-            <p>
-              Thương hiệu sở hữu sản phẩm, dịch vụ chất lượng cao và ổn định
-            </p>
-          </div>
-          <div className="flex flex-col justify-center gap-2 rounded-lg shadow-lg px-4 py-8">
-            <h1 className="text-lg font-semibold text-[#0d47a1]">
-              Có hệ thống, chuỗi
-            </h1>
-            <p>
-              Thương hiệu sở hữu sản phẩm, dịch vụ chất lượng cao và ổn định
-            </p>
-          </div>
-        </div>
         <div>
           <input
             className="w-full py-1 px-4 border-solid border-[1px] border-[#0d47a1] rounded-md mb-3"
             placeholder="Tìm thương hiệu"
           />
-          <div className="flex overflow-x-auto space-x-2 scrollbar-hide mb-20">
+          <Slider {...settings} className="mb-5">
             {btns.map((item, index) => (
               <button
                 key={index}
                 onClick={() => setSelected(item)}
                 className={`${
-                  selected === item ? "border-solid border-[#0d47a1]" : ""
-                } px-10 bg-[#E0E0E0] rounded-xl whitespace-nowrap`}
+                  selected === item ? "outline outline-[2px] outline-[#0d47a1]" : ""
+                } mb-[2px] text-center bg-[#E0E0E0] rounded-xl `}
               >
                 {item}
               </button>
             ))}
-          </div>
+          </Slider>
           <div>
             <h1 className="text-2xl font-semibold text-[#0d47a1]">
               Thương hiệu hợp tác

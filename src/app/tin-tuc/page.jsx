@@ -161,7 +161,7 @@ const TrafficNews = () => {
         </h1>
           <button
             className="text-[#3c73a7] font-semibold"
-            onClick={() => router.push("/tin-tuc")}
+            onClick={() => router.push("/tin-tuc/tin-tuc-giao-thong")}
           >
             Xem tất cả
           </button>

@@ -183,7 +183,6 @@ const ViolationResult = ({ loginType }) => {
                   <h1 className="font-semibold text-lg text-[#0d47a1]">
                     30H-XXX.XX
                   </h1>
-                  <p className="text-black italic">(Xe ô tô - Biển trắng)</p>
                   <p className="text-black mb-1">Nguyễn Duy Bảo - 0963835542</p>
                   <div className="flex items-center gap-2">
                     <span className="bg-gray-400 text-white rounded-full px-2">
@@ -225,6 +224,26 @@ const ViolationTable = () => {
       <div className="overflow-x-auto">
         <table className="min-w-full border border-[#0d47a1] border-solid text-sm">
           <tbody>
+            <tr className="border-b border-solid border-l-0 border-t-0 border-r-0 bg-[#e5edf4] border-[#0d47a1]">
+              <td className="px-4 py-2 font-semibold text-gray-600">
+                Biển kiểm soát
+              </td>
+              <td className="px-4 py-2 text-gray-700">30H-XXXXX</td>
+            </tr>
+            <tr className="border-b border-[#0d47a1] border-solid border-l-0 border-t-0 border-r-0 bg-[#cddbe9]">
+              <td className="w-1/5 px-4 py-2 font-semibold text-gray-600">
+                Loại phương tiện
+              </td>
+              <td className="px-4 py-2 text-gray-700">Ô tô</td>
+            </tr>
+            <tr className="border-b border-solid border-l-0 border-t-0 border-r-0 bg-[#e5edf4] border-[#0d47a1]">
+              <td className="px-4 py-2 font-semibold text-gray-600">
+                Loại biển kiểm soát
+              </td>
+              <td className="px-4 py-2 text-gray-700">
+                Chữ đen trên nền trắng
+              </td>
+            </tr>
             <tr className="border-b border-[#0d47a1] border-solid border-l-0 border-t-0 border-r-0 bg-[#cddbe9]">
               <td className="w-1/5 px-4 py-2 font-semibold text-gray-600">
                 Địa điểm vi phạm
@@ -305,6 +324,26 @@ const ViolationTable2 = () => {
       <div className="overflow-x-auto">
         <table className="min-w-full border border-[#0d47a1] border-solid text-sm">
           <tbody>
+            <tr className="border-b border-solid border-l-0 border-t-0 border-r-0 bg-[#e5edf4] border-[#0d47a1]">
+              <td className="px-4 py-2 font-semibold text-gray-600">
+                Biển kiểm soát
+              </td>
+              <td className="px-4 py-2 text-gray-700">30H-XXXXX</td>
+            </tr>
+            <tr className="border-b border-[#0d47a1] border-solid border-l-0 border-t-0 border-r-0 bg-[#cddbe9]">
+              <td className="w-1/5 px-4 py-2 font-semibold text-gray-600">
+                Loại phương tiện
+              </td>
+              <td className="px-4 py-2 text-gray-700">Ô tô</td>
+            </tr>
+            <tr className="border-b border-solid border-l-0 border-t-0 border-r-0 bg-[#e5edf4] border-[#0d47a1]">
+              <td className="px-4 py-2 font-semibold text-gray-600">
+                Loại biển kiểm soát
+              </td>
+              <td className="px-4 py-2 text-gray-700">
+                Chữ đen trên nền trắng
+              </td>
+            </tr>
             <tr className="border-b border-[#0d47a1] border-solid border-l-0 border-t-0 border-r-0 bg-[#cddbe9]">
               <td className="w-1/5 px-4 py-2 font-semibold text-gray-600">
                 Địa điểm vi phạm

@@ -379,10 +379,6 @@ const MobileHeader = () => {
                       <User className="w-5" />
                       Tài khoản
                     </DropdownMenu.Item>
-                    <DropdownMenu.Item className="hover:cursor-pointer">
-                      <Settings className="w-5" />
-                      Cài đặt
-                    </DropdownMenu.Item>
                     <DropdownMenu.Separator />
                     <DropdownMenu.Item className="hover:cursor-pointer">
                       <LogOut className="w-5" />
@@ -446,6 +442,7 @@ const MobileHeader = () => {
                     <DropdownMenu.Item
                       color="red"
                       className="hover:cursor-pointer"
+                      onClick={() => router.push("/tra-cuu-phat-nguoi")}
                     >
                       <AlertCircle className="w-5" />
                       Thông báo: Có 01 lỗi vi phạm !

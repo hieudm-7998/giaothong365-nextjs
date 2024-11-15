@@ -112,3 +112,11 @@ select {
 .cmt input {
 	width: 100%;
 }
+
+.slick-slide {
+  margin-right: 10px; /* Adjust as needed */
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-bottom: 2px;
+  width: 200px !important;
+}
