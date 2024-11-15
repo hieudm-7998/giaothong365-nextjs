@@ -1,9 +1,6 @@
 "use client";
 
-import { Box, ScrollArea } from "@radix-ui/themes";
 import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Scrollbar } from "swiper/modules";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -31,6 +28,7 @@ function DoiTac() {
   const settings = {
     dots: false,
     infinite: false,
+    arrows: true,
     slidesToShow: isDesktop ? 4 : 1,
     slidesToScroll: 1,
     edgeFriction: 0,
