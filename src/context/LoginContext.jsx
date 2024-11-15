@@ -10,13 +10,32 @@ const LoginContext = createContext();
 
 export function LoginProvider({ children }) {
   const [loginType, setLoginType] = useState(DEFAULT);
+  const [isRegisterSuccess, setIsRegisterSuccess] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const toggleLoginType = (type) => {
     setLoginType(type);
   };
 
+  const toggleRegisterSuccess = (type) => {
+    setIsRegisterSuccess(type);
+  };
+
+  const toggleIsLoggedIn = (type) => {
+    setIsLoggedIn(type);
+  };
+
   return (
-    <LoginContext.Provider value={{ loginType, toggleLoginType }}>
+    <LoginContext.Provider
+      value={{
+        loginType,
+        toggleLoginType,
+        isRegisterSuccess,
+        toggleRegisterSuccess,
+        isLoggedIn,
+        toggleIsLoggedIn,
+      }}
+    >
       {children}
     </LoginContext.Provider>
   );

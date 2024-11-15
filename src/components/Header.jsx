@@ -544,6 +544,13 @@ const MobileHeader = () => {
 const RegisterDialog = () => {
   const isHome = useIsHome();
 
+  const {
+    loginType,
+    isRegisterSuccess,
+    toggleLoginType,
+    toggleRegisterSuccess,
+  } = useLoginContext();
+
   const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
@@ -571,86 +578,121 @@ const RegisterDialog = () => {
       </Dialog.Trigger>
 
       <Dialog.Content maxWidth="450px">
-        <Dialog.Title>Đăng ký hội viên</Dialog.Title>
-        <Dialog.Description size="2" mb="4">
-          Kiểm tra và quản lý vi phạm phạt nguội của bạn một cách nhanh chóng và
-          dễ dàng.
-        </Dialog.Description>
+        {isRegisterSuccess === false ? (
+          <>
+            <Dialog.Title>Đăng ký hội viên</Dialog.Title>
+            <Dialog.Description size="2" mb="4">
+              Kiểm tra và quản lý vi phạm phạt nguội của bạn một cách nhanh
+              chóng và dễ dàng.
+            </Dialog.Description>
 
-        <Flex direction="column" gap="3">
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Họ và tên
-            </Text>
-            <TextField.Root placeholder="Họ và tên" />
-          </label>
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Số điện thoại
-            </Text>
-            <TextField.Root placeholder="Số điện thoại" />
-          </label>
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Biển số xe (BKS)
-            </Text>
-            <TextField.Root placeholder="Ví dụ: 30K12363" />
-          </label>
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Loại phương tiện
-            </Text>
-            <select
-              className="w-full px-2 !py-1 border border-solid focus:outline-[#8CA4F0] rounded-md shadow-sm transition-all hover:cursor-pointer"
-              style={{ borderColor: "rgba(0.01,0.03,0.18,0.2)" }}
-              defaultValue=""
-            >
-              <option value="" disabled>
-                Chọn loại phương tiện
-              </option>
-              <option value="car">Ô tô</option>
-              <option value="motorbike">Xe máy</option>
-              <option value="bicycle">Xe đạp</option>
-            </select>
-          </label>
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Mật khẩu
-            </Text>
-            <TextField.Root type="password" placeholder="Mật khẩu" />
-          </label>
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Nhập lại mật khẩu
-            </Text>
-            <TextField.Root type="password" placeholder="Nhập lại mật khẩu" />
-          </label>
-          <label className="flex items-center space-x-2">
-            <input type="checkbox" className="form-checkbox" />
-            <span>
-              Tôi đồng ý với
-              <Link
-                href="/dieu-khoan-su-dung"
-                className="text-[#759cff] cursor-pointer ml-1"
+            <Flex direction="column" gap="3">
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Họ và tên
+                </Text>
+                <TextField.Root placeholder="Họ và tên" />
+              </label>
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Số điện thoại
+                </Text>
+                <TextField.Root placeholder="Số điện thoại" />
+              </label>
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Biển số xe (BKS)
+                </Text>
+                <TextField.Root placeholder="Ví dụ: 30K12363" />
+              </label>
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Loại phương tiện
+                </Text>
+                <select
+                  className="w-full px-2 !py-1 border border-solid focus:outline-[#8CA4F0] rounded-md shadow-sm transition-all hover:cursor-pointer"
+                  style={{ borderColor: "rgba(0.01,0.03,0.18,0.2)" }}
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Chọn loại phương tiện
+                  </option>
+                  <option value="car">Ô tô</option>
+                  <option value="motorbike">Xe máy</option>
+                  <option value="bicycle">Xe đạp</option>
+                </select>
+              </label>
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Mật khẩu
+                </Text>
+                <TextField.Root type="password" placeholder="Mật khẩu" />
+              </label>
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Nhập lại mật khẩu
+                </Text>
+                <TextField.Root
+                  type="password"
+                  placeholder="Nhập lại mật khẩu"
+                />
+              </label>
+              <label className="flex items-center space-x-2">
+                <input type="checkbox" className="form-checkbox" />
+                <span>
+                  Tôi đồng ý với
+                  <Link
+                    href="/dieu-khoan-su-dung"
+                    className="text-[#759cff] cursor-pointer ml-1"
+                  >
+                    điều khoản chính sách
+                  </Link>
+                </span>
+              </label>
+            </Flex>
+
+            <Flex gap="3" mt="5" justify="center">
+              <Button
+                className="!bg-[#285398] transition-all hover:cursor-pointer"
+                onClick={() => {
+                  toggleRegisterSuccess(true);
+                }}
               >
-                điều khoản chính sách
-              </Link>
-            </span>
-          </label>
-        </Flex>
+                Đăng ký
+              </Button>
+              <Dialog.Close>
+                <Button variant="soft" color="gray">
+                  Huỷ
+                </Button>
+              </Dialog.Close>
+            </Flex>
+          </>
+        ) : (
+          <>
+            <Dialog.Title className="text-center text-green-500">
+              Đăng ký thành công !
+            </Dialog.Title>
+            <Dialog.Description size="2" mb="4" className="text-center">
+              <span>
+                Bạn đã đăng ký thành công với số điện thoại{" "}
+                <span className="font-semibold">037xxxxxxx</span>.
+              </span>
+              <span className="block">
+                Đóng hộp thoại để tự động đăng nhập.
+              </span>
+            </Dialog.Description>
 
-        <Flex gap="3" mt="5" justify="center">
-          <Dialog.Close>
-            <Button className="!bg-[#285398] transition-all hover:cursor-pointer">
-              Đăng ký
-            </Button>
-          </Dialog.Close>
-          <Dialog.Close>
-            <Button variant="soft" color="gray">
-              Huỷ
-            </Button>
-          </Dialog.Close>
-        </Flex>
+            <Flex gap="3" mt="3" justify="center">
+              <Button
+                variant="soft"
+                color="gray"
+                onClick={() => toggleLoginType(NO_VIOLATION)}
+              >
+                Đóng
+              </Button>
+            </Flex>
+          </>
+        )}
       </Dialog.Content>
     </Dialog.Root>
   );
@@ -658,6 +700,14 @@ const RegisterDialog = () => {
 
 const LoginDialog = () => {
   const isHome = useIsHome();
+  const {
+    loginType,
+    isRegisterSuccess,
+    toggleLoginType,
+    toggleIsLoggedIn,
+    isLoggedIn,
+    toggleRegisterSuccess,
+  } = useLoginContext();
 
   const [isScrolling, setIsScrolling] = useState(false);
 
@@ -686,39 +736,64 @@ const LoginDialog = () => {
       </Dialog.Trigger>
 
       <Dialog.Content maxWidth="450px">
-        <Dialog.Title>Đăng nhập</Dialog.Title>
-        {/* <Dialog.Description size="2" mb="4">
-          Kiểm tra và quản lý vi phạm phạt nguội của bạn một cách nhanh chóng và
-          dễ dàng.
-        </Dialog.Description> */}
+        {!isLoggedIn ? (
+          <>
+            <Dialog.Title>Đăng nhập</Dialog.Title>
 
-        <Flex direction="column" gap="3">
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Số điện thoại
-            </Text>
-            <TextField.Root placeholder="Số điện thoại " />
-          </label>
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Mật khẩu
-            </Text>
-            <TextField.Root type="password" placeholder="Nhập mật khẩu " />
-          </label>
-        </Flex>
+            <Flex direction="column" gap="3">
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Số điện thoại
+                </Text>
+                <TextField.Root placeholder="Số điện thoại " />
+              </label>
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Mật khẩu
+                </Text>
+                <TextField.Root type="password" placeholder="Nhập mật khẩu " />
+              </label>
+            </Flex>
 
-        <Flex gap="3" mt="5" justify="center">
-          <Dialog.Close>
-            <Button className="!bg-[#285398] transition-all hover:cursor-pointer">
-              Đăng nhập
-            </Button>
-          </Dialog.Close>
-          <Dialog.Close>
-            <Button variant="soft" color="gray">
-              Huỷ
-            </Button>
-          </Dialog.Close>
-        </Flex>
+            <Flex gap="3" mt="5" justify="center">
+              <Button
+                className="!bg-[#285398] transition-all hover:cursor-pointer"
+                onClick={() => {
+                  toggleIsLoggedIn(true);
+                }}
+              >
+                Đăng nhập
+              </Button>
+              <Dialog.Close>
+                <Button variant="soft" color="gray">
+                  Huỷ
+                </Button>
+              </Dialog.Close>
+            </Flex>
+          </>
+        ) : (
+          <>
+            <Dialog.Title className="text-center text-green-500">
+              Đăng nhập thành công !
+            </Dialog.Title>
+            <Dialog.Description size="2" mb="4" className="text-center">
+              <span>
+                Đăng nhập thành công với số điện thoại{" "}
+                <span className="font-semibold">037xxxxxxx</span>.
+              </span>
+            </Dialog.Description>
+
+            <Flex gap="3" mt="3" justify="center">
+              <Button
+                variant="soft"
+                color="gray"
+                onClick={() => toggleLoginType(NO_VIOLATION)}
+              >
+                Đóng
+              </Button>
+            </Flex>
+          </>
+        )}
       </Dialog.Content>
     </Dialog.Root>
   );
@@ -726,6 +801,15 @@ const LoginDialog = () => {
 
 const MobileLoginDialog = () => {
   const isHome = useIsHome();
+  const {
+    loginType,
+    isLoggedIn,
+    toggleIsLoggedIn,
+    isRegisterSuccess,
+    toggleLoginType,
+    toggleRegisterSuccess,
+  } = useLoginContext();
+
   return (
     <Dialog.Root>
       <Dialog.Trigger>
@@ -735,45 +819,76 @@ const MobileLoginDialog = () => {
       </Dialog.Trigger>
 
       <Dialog.Content maxWidth="450px">
-        <Dialog.Title>Đăng nhập</Dialog.Title>
-        {/* <Dialog.Description size="2" mb="4">
-          Kiểm tra và quản lý vi phạm phạt nguội của bạn một cách nhanh chóng và
-          dễ dàng.
-        </Dialog.Description> */}
+        {!isLoggedIn ? (
+          <>
+            <Dialog.Title>Đăng nhập</Dialog.Title>
 
-        <Flex direction="column" gap="3">
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Số điện thoại
-            </Text>
-            <TextField.Root placeholder="Số điện thoại " />
-          </label>
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Mật khẩu
-            </Text>
-            <TextField.Root type="password" placeholder="Nhập mật khẩu " />
-          </label>
-        </Flex>
+            <Flex direction="column" gap="3">
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Số điện thoại
+                </Text>
+                <TextField.Root placeholder="Số điện thoại " />
+              </label>
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Mật khẩu
+                </Text>
+                <TextField.Root type="password" placeholder="Nhập mật khẩu " />
+              </label>
+            </Flex>
 
-        <Flex gap="3" mt="5" justify="center">
-          <Dialog.Close>
-            <Button className="!bg-[#285398] transition-all hover:cursor-pointer">
-              Đăng nhập
-            </Button>
-          </Dialog.Close>
-          <Dialog.Close>
-            <Button variant="soft" color="gray">
-              Huỷ
-            </Button>
-          </Dialog.Close>
-        </Flex>
+            <Flex gap="3" mt="5" justify="center">
+              <Button
+                className="!bg-[#285398] transition-all hover:cursor-pointer"
+                onClick={() => {
+                  toggleIsLoggedIn(true);
+                }}
+              >
+                Đăng nhập
+              </Button>
+              <Dialog.Close>
+                <Button variant="soft" color="gray">
+                  Huỷ
+                </Button>
+              </Dialog.Close>
+            </Flex>
+          </>
+        ) : (
+          <>
+            <Dialog.Title className="text-center text-green-500">
+              Đăng nhập thành công !
+            </Dialog.Title>
+            <Dialog.Description size="2" mb="4" className="text-center">
+              <span>
+                Đăng nhập thành công với số điện thoại{" "}
+                <span className="font-semibold">037xxxxxxx</span>.
+              </span>
+            </Dialog.Description>
+
+            <Flex gap="3" mt="3" justify="center">
+              <Button
+                variant="soft"
+                color="gray"
+                onClick={() => toggleLoginType(NO_VIOLATION)}
+              >
+                Đóng
+              </Button>
+            </Flex>
+          </>
+        )}
       </Dialog.Content>
     </Dialog.Root>
   );
 };
 
 const MobileRegisterDialog = () => {
+  const {
+    loginType,
+    isRegisterSuccess,
+    toggleLoginType,
+    toggleRegisterSuccess,
+  } = useLoginContext();
   return (
     <Dialog.Root>
       <Dialog.Trigger>
@@ -783,86 +898,119 @@ const MobileRegisterDialog = () => {
       </Dialog.Trigger>
 
       <Dialog.Content maxWidth="450px">
-        <Dialog.Title>Đăng ký hội viên</Dialog.Title>
-        <Dialog.Description size="2" mb="4">
-          Kiểm tra và quản lý vi phạm phạt nguội của bạn một cách nhanh chóng và
-          dễ dàng.
-        </Dialog.Description>
+        {isRegisterSuccess === false ? (
+          <>
+            <Dialog.Title>Đăng ký hội viên</Dialog.Title>
+            <Dialog.Description size="2" mb="4">
+              Kiểm tra và quản lý vi phạm phạt nguội của bạn một cách nhanh
+              chóng và dễ dàng.
+            </Dialog.Description>
 
-        <Flex direction="column" gap="3">
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Họ và tên
-            </Text>
-            <TextField.Root placeholder="Họ và tên" />
-          </label>
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Số điện thoại
-            </Text>
-            <TextField.Root placeholder="Số điện thoại" />
-          </label>
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Biển số xe (BKS)
-            </Text>
-            <TextField.Root placeholder="Ví dụ: 30K12363" />
-          </label>
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Loại phương tiện
-            </Text>
-            <select
-              className="w-full px-2 !py-1 border border-solid focus:outline-[#8CA4F0] rounded-md shadow-sm transition-all hover:cursor-pointer"
-              style={{ borderColor: "rgba(0.01,0.03,0.18,0.2)" }}
-              defaultValue=""
-            >
-              <option value="" disabled>
-                Chọn loại phương tiện
-              </option>
-              <option value="car">Ô tô</option>
-              <option value="motorbike">Xe máy</option>
-              <option value="bicycle">Xe đạp</option>
-            </select>
-          </label>
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Mật khẩu
-            </Text>
-            <TextField.Root type="password" placeholder="Mật khẩu" />
-          </label>
-          <label>
-            <Text as="div" size="2" mb="1" weight="bold">
-              Nhập lại mật khẩu
-            </Text>
-            <TextField.Root type="password" placeholder="Nhập lại mật khẩu" />
-          </label>
-          <label className="flex items-center space-x-2">
-            <input type="checkbox" className="form-checkbox" />
-            <span>
-              Tôi đồng ý với
-              <Link
-                href="/dieu-khoan-su-dung"
-                className="text-[#759cff] cursor-pointer ml-1"
+            <Flex direction="column" gap="3">
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Họ và tên
+                </Text>
+                <TextField.Root placeholder="Họ và tên" />
+              </label>
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Số điện thoại
+                </Text>
+                <TextField.Root placeholder="Số điện thoại" />
+              </label>
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Biển số xe (BKS)
+                </Text>
+                <TextField.Root placeholder="Ví dụ: 30K12363" />
+              </label>
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Loại phương tiện
+                </Text>
+                <select
+                  className="w-full px-2 !py-1 border border-solid focus:outline-[#8CA4F0] rounded-md shadow-sm transition-all hover:cursor-pointer"
+                  style={{ borderColor: "rgba(0.01,0.03,0.18,0.2)" }}
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Chọn loại phương tiện
+                  </option>
+                  <option value="car">Ô tô</option>
+                  <option value="motorbike">Xe máy</option>
+                  <option value="bicycle">Xe đạp</option>
+                </select>
+              </label>
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Mật khẩu
+                </Text>
+                <TextField.Root type="password" placeholder="Mật khẩu" />
+              </label>
+              <label>
+                <Text as="div" size="2" mb="1" weight="bold">
+                  Nhập lại mật khẩu
+                </Text>
+                <TextField.Root
+                  type="password"
+                  placeholder="Nhập lại mật khẩu"
+                />
+              </label>
+              <label className="flex items-center space-x-2">
+                <input type="checkbox" className="form-checkbox" />
+                <span>
+                  Tôi đồng ý với
+                  <Link
+                    href="/dieu-khoan-su-dung"
+                    className="text-[#759cff] cursor-pointer ml-1"
+                  >
+                    điều khoản chính sách
+                  </Link>
+                </span>
+              </label>
+            </Flex>
+
+            <Flex gap="3" mt="5" justify="center">
+              <Button
+                className="!bg-[#285398] transition-all hover:cursor-pointer"
+                onClick={() => toggleRegisterSuccess(true)}
               >
-                điều khoản chính sách
-              </Link>
-            </span>
-          </label>
-        </Flex>
+                Đăng ký
+              </Button>
+              <Dialog.Close>
+                <Button variant="soft" color="gray">
+                  Huỷ
+                </Button>
+              </Dialog.Close>
+            </Flex>
+          </>
+        ) : (
+          <>
+            <Dialog.Title className="text-center text-green-500">
+              Đăng ký thành công !
+            </Dialog.Title>
+            <Dialog.Description size="2" mb="4" className="text-center">
+              <span>
+                Bạn đã đăng ký thành công với số điện thoại{" "}
+                <span className="font-semibold">037xxxxxxx</span>.
+              </span>
+              <span className="block">
+                Đóng hộp thoại để tự động đăng nhập.
+              </span>
+            </Dialog.Description>
 
-        <Flex gap="3" mt="5" justify="center">
-          <Dialog.Close>
-            <Button className="!bg-[#285398] transition-all hover:cursor-pointer">
-              Đăng ký
-            </Button>
-          </Dialog.Close>
-          <Dialog.Close>
-            <Button variant="soft" color="gray">
-              Huỷ
-            </Button>
-          </Dialog.Close>
-        </Flex>
+            <Flex gap="3" mt="5" justify="center">
+              <Button
+                variant="soft"
+                color="gray"
+                onClick={() => toggleLoginType(NO_VIOLATION)}
+              >
+                Đóng
+              </Button>
+            </Flex>
+          </>
+        )}
       </Dialog.Content>
     </Dialog.Root>
   );
