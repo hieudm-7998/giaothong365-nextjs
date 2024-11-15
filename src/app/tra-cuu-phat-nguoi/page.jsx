@@ -70,10 +70,8 @@ const ViolationResult = ({ loginType }) => {
                 </svg>
               </div>
               <div className="col-span-3">
-                <h1 className="font-semibold text-lg text-[#0d47a1]">
-                  30H-XXX.XX
-                </h1>
-                <p className="text-black">Nguyễn Duy Bảo - 0963835542</p>
+                <p className="text-black">Nguyễn Duy Bảo</p>
+                <p className="mb-1">0963835542</p>
                 <div className="flex items-center gap-2">
                   <span className="bg-gray-400 text-white rounded-full px-2">
                     Free
@@ -180,10 +178,8 @@ const ViolationResult = ({ loginType }) => {
                   </svg>
                 </div>
                 <div className="col-span-3 flex flex-col justify-center">
-                  <h1 className="font-semibold text-lg text-[#0d47a1]">
-                    30H-XXX.XX
-                  </h1>
-                  <p className="text-black mb-1">Nguyễn Duy Bảo - 0963835542</p>
+                  <p className="text-black">Nguyễn Duy Bảo</p>
+                  <p className="mb-1">0963835542</p>
                   <div className="flex items-center gap-2">
                     <span className="bg-gray-400 text-white rounded-full px-2">
                       Free
